@@ -1,0 +1,229 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.JSInterop
+@using System.Diagnostics
+@using OPRRosterBuilder.Models
+@using OPRRosterBuilder.Services
+@using OPRRosterBuilder.Commands
+@using Newtonsoft.Json
+@using System.Text.Json;
+@inject JsonFileReaderService jsonService
+@inject IJSRuntime JSRuntime
+
+
+
+
+@if (Units == null)
+{
+    <p>Army doesn't exist</p>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-sm" id="unitList">
+
+                @foreach (Unit unit in Units)
+                {
+                    <div class="card">
+                        <div class="card-body" @onclick="(e => addUnit(unit))">
+                            <h5 class="card-title">@(unit.UnitName + " - " + unit.Points + "pts.")  &plus;</h5>
+                            @foreach (var item in unit.StartingGear)
+                            {
+                                <p class="card-text">@(item.Value.Item2 + "X " + item.Key + " " + item.Value.Item1)</p>
+                            }
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div class="col" id="armyRoster">
+                @foreach (Unit unit in this.ArmyRoster)
+                {
+                    <div class="card">
+                        <div class="card-body" @onclick="(e => selectModifiers(unit))">
+                            <h5 class="card-title">@(unit.UnitName + " - " + unit.Points + "pts.")  &plus;</h5>
+                            @foreach (var item in unit.StartingGear)
+                            {
+                                <p class="card-text">@(item.Value.Item2 + "X " + item.Key + " " + item.Value.Item1)</p>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="col" id="options">
+                @{
+                    int i = 0;
+                }
+                @foreach (Modifier mod in Mods)
+                {
+                    @if (mod.ModType == ModTypes.Replace)
+                    {
+                        <div>
+                            <h5>@("Replace one " + formattedGearList(mod.Target))</h5>
+                            <ul class="list-group">
+                                @foreach (ModifierOption option in mod.Options)
+                                {
+
+                                    string idName = "Button" + i;
+
+                                    <li class="list-group-item">
+                                        @if (option.OptionPicked)
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionPicked(e, new ReplaceCommand(CurrentUnit, mod, option), idName))" checked>
+                                        }
+                                        else
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionPicked(e, new ReplaceCommand(CurrentUnit, mod, option), idName))">
+                                        }
+
+                                        <label class="form-check-label" for=@idName>
+                                            @( option.OptionPoints + " pts. ")
+                                            @foreach ((string, string, int) gearItem in option.OptionGear)
+                                            {
+                                                @(gearItem.Item3 + "x " + gearItem.Item1 + " " + gearItem.Item2 + " ")
+                                            }
+                                        </label>
+                                    </li>
+                                    i++;
+                                }
+
+                            </ul>
+                        </div>
+                    }
+                    else if (mod.ModType == ModTypes.Upgrade)
+                    {
+                        <div>
+                            <h5>@("Take one " + formattedGearList(mod.Target) + " upgrade")</h5>
+                            <ul class="list-group">
+                                @foreach (ModifierOption option in mod.Options)
+                                {
+                                    string idName = "Button" + i;
+                                    <li class="list-group-item">
+                                        @if (option.OptionPicked)
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName checked>
+                                        }
+                                        else
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName>
+                                        }
+
+                                        <label class="form-check-label" for=@idName>
+                                            @( option.OptionPoints + " pts. ")
+                                            @foreach ((string, string, int) gearItem in option.OptionGear)
+                                            {
+                                                @(gearItem.Item3 + "x " + gearItem.Item1 + " " + gearItem.Item2 + " ")
+                                            }
+                                        </label>
+                                    </li>
+                                    i++;
+                                }
+
+                            </ul>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+    </div>
+}
+
+
+
+@code {
+
+    [Parameter]
+    public string ArmyName { get; set; }
+    public IEnumerable<Unit> Units { get; private set; }
+    public IEnumerable<Modifier> Mods { get; private set; }
+    public Unit CurrentUnit { get; private set; }
+    public List<Unit> ArmyRoster { get; set; }
+    public int Points { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        Units = jsonService.GetUnits(ArmyName);
+        ArmyRoster = new List<Unit>();
+        Mods = new List<Modifier>();
+    }
+
+    private void addUnit(Unit unit)
+    {
+        /*Unit newUnit = JsonSerializer.Deserialize<Unit>(unit.ToString(), new JsonSerializerOptions
+        {
+            IncludeFields = true,
+        });*/
+        Unit newUnit = JsonConvert.DeserializeObject<Unit>(unit.ToString());
+        ArmyRoster.Add(newUnit);
+
+    }
+
+    private void selectModifiers(Unit unit)
+    {
+        //System.Diagnostics.Debugger.Break();
+        CurrentUnit = unit;
+        Mods = CurrentUnit.Modifiers;
+        StateHasChanged();
+    }
+
+    private string formattedGearList(List<(string, string, int)> targetGear)
+    {
+
+        if (targetGear.Count == 1)
+        {
+            if (targetGear[0].Item1.Equals("self"))
+            {
+                return "";
+            }
+            else
+            {
+                return targetGear[0].Item1;
+            }
+
+
+        }
+        else if (targetGear.Count >= 1)
+        {
+            string combinedString = "";
+
+            for (int i = 0; i < targetGear.Count - 1; i++)
+            {
+                combinedString += targetGear[i].Item1 + " ";
+            }
+
+            combinedString += "and " + targetGear[targetGear.Count - 1].Item1;
+
+            return combinedString;
+        }
+        else
+        {
+            return "";
+        }
+
+    }
+
+    //Called whenever a user picks an upgrade for unit in their list
+    private async void optionPicked(EventArgs e, IModifyCommand command, string Id)
+    {
+        bool isChecked = await JSRuntime.InvokeAsync<bool>("isChecked", Id);
+        if (isChecked)
+        {
+            if (!command.execute())
+            {
+                await JSRuntime.InvokeVoidAsync("changeCheck", Id, false);
+
+            }
+
+        }
+        else
+        {
+            if (!command.undo())
+            {
+                await JSRuntime.InvokeVoidAsync("changeCheck", Id, true);
+            }
+        }
+        StateHasChanged();
+    }
+}

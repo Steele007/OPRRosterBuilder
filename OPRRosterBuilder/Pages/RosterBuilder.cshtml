@@ -1,0 +1,15 @@
+﻿@page
+@using OPRRosterBuilder.Components
+@model OPRRosterBuilder.Pages.RosterBuilderModel
+@{
+    ViewData["Title"] = "Roster Builder";
+}
+
+
+@(await Html.RenderComponentAsync<ArmyList>(RenderMode.ServerPrerendered, new { ArmyName = Request.Query["p"].ToString()}))
+<script src="_framework/blazor.server.js"></script>
+<script src="/js/RosterFunctions.js"></script>
+
+
+
+

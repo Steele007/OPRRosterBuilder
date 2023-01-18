@@ -1,0 +1,253 @@
+[
+  {
+    "UnitName": "Master Brother",
+    "UnitSize": 1,
+    "Points": 55,
+    "Quality": 3,
+    "Defense": 3,
+    "StartingGear": {
+      "Heavy Rifle": {
+        "Item1": "(24\", A1, AP(1))",
+        "Item2": 1
+      },
+      "CCW": {
+        "Item1": "(A1)",
+        "Item2": 1
+      }
+    },
+    "SpecialRules": ["Fearless", "Hero", "Tough(3)"],
+    "Modifiers": [
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          },
+          {
+            "Item1": "CCW",
+            "Item2": "(A1)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "Item1": [
+              {
+                "Item1": "Heavy Pistol",
+                "Item2": "(12\", A1, AP(1))",
+                "Item3": 1               
+              },
+              {
+                "Item1": "CCW",
+                "Item2": "(A2)",
+                "Item3": 1
+              }
+            ],
+            "Item2": 0,
+            "Item3": false
+          },
+          {
+            "Item1": [
+              {
+                "Item1": "Dual Energy Claws",
+                "Item2": "(A4, Rending)",
+                "Item3": 1
+              }
+            ],
+            "Item2": 10,
+            "Item3": false
+          },
+          {
+            "Item1": [
+              {
+                "Item1": "Heavy Chainsaw Sword",
+                "Item2": "(A4, AP(1))",
+                "Item3": 1
+              }
+            ],
+            "Item2": 10,
+            "Item3": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Pistol",
+            "Item2": "(12\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "Item1": [
+              {
+                "Item1": "Plasma Pistol",
+                "Item2": "(12\", A1, AP(4))",
+                "Item3": 1
+              }
+            ],
+            "Item2": 5,
+            "Item3": false
+          },
+          {
+            "Item1": [
+              {
+                "Item1": "Combat Shield",
+                "Item2": "(Shield Wall)",
+                "Item3": 1
+              }
+            ],
+            "Item2": 10,
+            "Item3": false
+          },
+          {
+            "Item1": [
+              {
+                "Item1": "Gravity Pistol",
+                "Item2": "(12\", A3, Rending)",
+                "Item3": 1
+              }
+            ],
+            "Item2": 10,
+            "Item3": false
+          },
+          {
+            "Item1": [
+              {
+                "Item1": "Storm Rifle",
+                "Item2": "(24\", A3, AP(1))",
+                "Item3": 1
+              }
+            ],
+            "Item2": 30,
+            "Item3": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "CCW",
+            "Item2": "(A1)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "Item1": [
+              {
+                "Item1": "Energy Hammer",
+                "Item2": "(A1, Blast(3))",
+                "Item3": 1
+              }
+            ],
+            "Item2": 10,
+            "Item3": false
+          },
+          {
+            "Item1": [
+              {
+                "Item1": "Energy Sword",
+                "Item2": "(A2, AP(1), Rending)",
+                "Item3": 1
+              }
+            ],
+            "Item2": 10,
+            "Item3": false
+          },
+          {
+            "Item1": [
+              {
+                "Item1": "Chain-Fist",
+                "Item2": "(A1, AP(2), Deadly(3))",
+                "Item3": 1
+              }
+            ],
+            "Item2": 15,
+            "Item3": false
+          },
+          {
+            "Item1": [
+              {
+                "Item1": "Energy Fist",
+                "Item2": "(A2, AP(4))",
+                "Item3": 1
+              }
+            ],
+            "Item2": 15,
+            "Item3": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "Item1": [
+              {
+                "Item1": "Plasma-Mod",
+                "Item2": "(12\", A1, AP(4))",
+                "Item3": 1
+              }
+            ],
+            "Item2": 10,
+            "Item3": false
+          },
+          {
+            "Item1": [
+              {
+                "Item1": "Fusion-Mod",
+                "Item2": "(6\", A1, AP(4), Deadly(3))",
+                "Item3": 1
+              }
+            ],
+            "Item2": 15,
+            "Item3": false
+          },
+          {
+            "Item1": [
+              {
+                "Item1": "Flamer-Mod",
+                "Item2": "(6\", A6)",
+                "Item3": 1
+              }
+            ],
+            "Item2": 15,
+            "Item3": false
+          },
+          {
+            "Item1": [
+              {
+                "Item1": "Gravity-Mod",
+                "Item2": "(9\", A3, Rending)",
+                "Item3": 1
+              }
+            ],
+            "Item2": 15,
+            "Item3": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  }
+]
