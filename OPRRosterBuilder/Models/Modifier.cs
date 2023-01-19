@@ -11,8 +11,6 @@ namespace OPRRosterBuilder.Models
     {     
         public ModTypes ModType { get; set; }
         public List<(string, string, int)> Target { get; set; }
-        //Array list of gear added (name, rules text, number), points, and if it was picked.
-        //public List<((string, string, int)[], int, bool)> Options{ get; set; }
         public List<ModifierOption> Options { get; set; }
         public int TargetNum { get; set; }
         public int CurrentNum { get; set; }

@@ -14,7 +14,8 @@ namespace OPRRosterBuilder.Models
         public int Points { get; set; }
         public int Quality { get; set; }
         public int Defense { get; set; }
-        public Dictionary<string, (string, int)> StartingGear { get; set; }
+        //Key is the item name, the value is (rules text, point cost and whether or the item has been upgraded)
+        public Dictionary<string, (string, int, bool)> StartingGear { get; set; }
         public Modifier[] Modifiers { get; set; }
         public string[] SpecialRules { get; set; }
         //Add an array of Models?

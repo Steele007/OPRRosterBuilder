@@ -78,7 +78,7 @@ else
 
                                         <label class="form-check-label" for=@idName>
                                             @( option.OptionPoints + " pts. ")
-                                            @foreach ((string, string, int) gearItem in option.OptionGear)
+                                            @foreach ((string, string, int, bool) gearItem in option.OptionGear)
                                             {
                                                 @(gearItem.Item3 + "x " + gearItem.Item1 + " " + gearItem.Item2 + " ")
                                             }
@@ -101,16 +101,16 @@ else
                                     <li class="list-group-item">
                                         @if (option.OptionPicked)
                                         {
-                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName checked>
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionPicked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))" checked>
                                         }
                                         else
                                         {
-                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName>
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionPicked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))">
                                         }
 
                                         <label class="form-check-label" for=@idName>
                                             @( option.OptionPoints + " pts. ")
-                                            @foreach ((string, string, int) gearItem in option.OptionGear)
+                                            @foreach ((string, string, int, bool) gearItem in option.OptionGear)
                                             {
                                                 @(gearItem.Item3 + "x " + gearItem.Item1 + " " + gearItem.Item2 + " ")
                                             }

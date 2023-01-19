@@ -21,130 +21,122 @@ namespace OPRRosterBuilder.Commands
 
         public bool execute() 
         {
-            bool prerequisitesMet = true;
+            //Checks if the gear the option is replacing is either not present or has an upgrade attached.
+            (string, int, bool) targetValue;
             foreach ((string, string, int) target in AssignedModifier.Target)
             {
-                if (!AssignedUnit.StartingGear.ContainsKey(target.Item1))
+                if (!AssignedUnit.StartingGear.TryGetValue(target.Item1, out targetValue) || targetValue.Item3)
                 {
-                    prerequisitesMet = false;
+                    return false;
                 }
             }
 
             if(AssignedModifier.CurrentNum >= AssignedModifier.TargetNum)
             {
-                prerequisitesMet = false;
-            }
-
-            if (prerequisitesMet)
-            {
-                foreach ((string, string, int) target in AssignedModifier.Target)
-                {
-
-                    //Decrements the target gear by 1 if it's being replaced
-                    (string, int) dictValue;
-                    AssignedUnit.StartingGear.TryGetValue(target.Item1, out dictValue);
-                    dictValue.Item2--;
-                    if (dictValue.Item2 == 0)
-                    {
-                        AssignedUnit.StartingGear.Remove(target.Item1);
-                    }
-                    else
-                    {
-                        AssignedUnit.StartingGear.Remove(target.Item1);
-                        AssignedUnit.StartingGear.Add(target.Item1, dictValue);
-                    }
-
-                }
-
-                foreach ((string, string, int) gear in AssignedOption.OptionGear)
-                {
-                    if (!AssignedUnit.StartingGear.TryAdd(gear.Item1, (gear.Item2, gear.Item3)))
-                    {
-                        (string, int) dictValue;
-                        AssignedUnit.StartingGear.TryGetValue(gear.Item1, out dictValue);
-                        dictValue.Item2++;
-
-                        AssignedUnit.StartingGear.Remove(gear.Item1);
-                        AssignedUnit.StartingGear.Add(gear.Item1, dictValue);
-                    }
-                }
-
-                //For some reason AssignedOption.Item3 = true throws an error.
-                ModifierOption temp = AssignedOption;
-                temp.OptionPicked = true;
-                AssignedOption = temp;
-
-                AssignedUnit.Points += AssignedOption.OptionPoints;
-                AssignedModifier.CurrentNum++;
-
-                return true;
-
-            }
-            else
-            {
                 return false;
             }
+
+            
+            foreach ((string, string, int) target in AssignedModifier.Target)
+            {
+
+                //Decrements the target gear by 1 if it's being replaced
+                (string, int, bool) dictValue;
+                AssignedUnit.StartingGear.TryGetValue(target.Item1, out dictValue);
+                dictValue.Item2--;
+                if (dictValue.Item2 == 0)
+                {
+                    AssignedUnit.StartingGear.Remove(target.Item1);
+                }
+                else
+                {
+                    AssignedUnit.StartingGear.Remove(target.Item1);
+                    AssignedUnit.StartingGear.Add(target.Item1, dictValue);
+                }
+
+            }
+
+            foreach ((string, string, int, bool) gear in AssignedOption.OptionGear)
+            {
+                if (!AssignedUnit.StartingGear.TryAdd(gear.Item1, (gear.Item2, gear.Item3, false)))
+                {
+                    (string, int, bool) dictValue;
+                    AssignedUnit.StartingGear.TryGetValue(gear.Item1, out dictValue);
+                    dictValue.Item2++;
+
+                    AssignedUnit.StartingGear.Remove(gear.Item1);
+                    AssignedUnit.StartingGear.Add(gear.Item1, dictValue);
+                }
+            }
+
+                //For some reason AssignedOption.Item3 = true throws an error.
+             ModifierOption temp = AssignedOption;
+             temp.OptionPicked = true;
+             AssignedOption = temp;
+
+             AssignedUnit.Points += AssignedOption.OptionPoints;
+             AssignedModifier.CurrentNum++;
+
+             return true;
+
+            
         }
         public bool undo() 
         {
-            bool prerequisitesMet = true;
-            foreach ((string, string, int) target in AssignedOption.OptionGear)
+            //Checks if the gear the option is replacing is either not present or has an upgrade attached.
+            (string, int, bool) targetValue;
+            foreach ((string, string, int, bool) target in AssignedOption.OptionGear)
             {
-                if (!AssignedUnit.StartingGear.ContainsKey(target.Item1))
+                if (!AssignedUnit.StartingGear.TryGetValue(target.Item1, out targetValue) || targetValue.Item3)
                 {
-                    prerequisitesMet = false;
+                    return false;
                 }
             }
 
-            if (prerequisitesMet)
+            
+            foreach ((string, string, int, bool) target in AssignedOption.OptionGear)
             {
-                foreach ((string, string, int) target in AssignedOption.OptionGear)
+
+                //Decrements the target gear by 1 if it's being replaced
+                (string, int, bool) dictValue;
+                AssignedUnit.StartingGear.TryGetValue(target.Item1, out dictValue);
+                dictValue.Item2--;
+                if (dictValue.Item2 == 0)
                 {
-
-                    //Decrements the target gear by 1 if it's being replaced
-                    (string, int) dictValue;
-                    AssignedUnit.StartingGear.TryGetValue(target.Item1, out dictValue);
-                    dictValue.Item2--;
-                    if (dictValue.Item2 == 0)
-                    {
-                        AssignedUnit.StartingGear.Remove(target.Item1);
-                    }
-                    else
-                    {
-                        AssignedUnit.StartingGear.Remove(target.Item1);
-                        AssignedUnit.StartingGear.Add(target.Item1, dictValue);
-                    }
-
+                    AssignedUnit.StartingGear.Remove(target.Item1);
+                }
+                else
+                {
+                    AssignedUnit.StartingGear.Remove(target.Item1);
+                    AssignedUnit.StartingGear.Add(target.Item1, dictValue);
                 }
 
-                foreach ((string, string, int) gear in AssignedModifier.Target)
-                {
-                    if (!AssignedUnit.StartingGear.TryAdd(gear.Item1, (gear.Item2, gear.Item3)))
-                    {
-                        (string, int) dictValue;
-                        AssignedUnit.StartingGear.TryGetValue(gear.Item1, out dictValue);
-                        dictValue.Item2++;
+            }
 
-                        AssignedUnit.StartingGear.Remove(gear.Item1);
-                        AssignedUnit.StartingGear.Add(gear.Item1, dictValue);
-                    }
+            foreach ((string, string, int) gear in AssignedModifier.Target)
+            {
+
+                if (!AssignedUnit.StartingGear.TryAdd(gear.Item1, (gear.Item2, gear.Item3, false)))
+                {
+
+                    (string, int, bool) dictValue;
+                    AssignedUnit.StartingGear.TryGetValue(gear.Item1, out dictValue);
+                    dictValue.Item2++;
+
+                    AssignedUnit.StartingGear.Remove(gear.Item1);
+                    AssignedUnit.StartingGear.Add(gear.Item1, dictValue);
                 }
+            }
 
                 //For some reason AssignedOption.Item3 = true throws an error.
-                ModifierOption temp = AssignedOption;
-                temp.OptionPicked = false;
-                AssignedOption = temp;
+            ModifierOption temp = AssignedOption;
+            temp.OptionPicked = false;
+            AssignedOption = temp;
 
-                AssignedUnit.Points -= AssignedOption.OptionPoints;
-                AssignedModifier.CurrentNum--;//No need to check against target?
+            AssignedUnit.Points -= AssignedOption.OptionPoints;
+            AssignedModifier.CurrentNum--;//No need to check against target?
 
-                return true;
-
-            }
-            else
-            {
-                return false;
-            }
+            return true;         
         }
 
     }
