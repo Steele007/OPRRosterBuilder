@@ -9,7 +9,7 @@ namespace OPRRosterBuilder.Models
 {
     public class ModifierOption
     {   //List of gear added (name, rules text, number, upgrade status)
-        public List<(string, string, int, bool)> OptionGear { get; set; }
+        public List<(string, string, int, int)> OptionGear { get; set; }
         public int OptionPoints { get; set; }
 
         public bool OptionPicked { get; set; }

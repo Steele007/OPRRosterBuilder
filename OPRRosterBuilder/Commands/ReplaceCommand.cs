@@ -22,10 +22,10 @@ namespace OPRRosterBuilder.Commands
         public bool execute() 
         {
             //Checks if the gear the option is replacing is either not present or has an upgrade attached.
-            (string, int, bool) targetValue;
+            (string, int, int) targetValue;
             foreach ((string, string, int) target in AssignedModifier.Target)
             {
-                if (!AssignedUnit.StartingGear.TryGetValue(target.Item1, out targetValue) || targetValue.Item3)
+                if (!AssignedUnit.CurrentGear.TryGetValue(target.Item1, out targetValue) || targetValue.Item2 <= targetValue.Item3)
                 {
                     return false;
                 }
@@ -41,31 +41,31 @@ namespace OPRRosterBuilder.Commands
             {
 
                 //Decrements the target gear by 1 if it's being replaced
-                (string, int, bool) dictValue;
-                AssignedUnit.StartingGear.TryGetValue(target.Item1, out dictValue);
+                (string, int, int) dictValue;
+                AssignedUnit.CurrentGear.TryGetValue(target.Item1, out dictValue);
                 dictValue.Item2--;
                 if (dictValue.Item2 == 0)
                 {
-                    AssignedUnit.StartingGear.Remove(target.Item1);
+                    AssignedUnit.CurrentGear.Remove(target.Item1);
                 }
                 else
                 {
-                    AssignedUnit.StartingGear.Remove(target.Item1);
-                    AssignedUnit.StartingGear.Add(target.Item1, dictValue);
+                    AssignedUnit.CurrentGear.Remove(target.Item1);
+                    AssignedUnit.CurrentGear.Add(target.Item1, dictValue);
                 }
 
             }
 
-            foreach ((string, string, int, bool) gear in AssignedOption.OptionGear)
+            foreach ((string, string, int, int) gear in AssignedOption.OptionGear)
             {
-                if (!AssignedUnit.StartingGear.TryAdd(gear.Item1, (gear.Item2, gear.Item3, false)))
+                if (!AssignedUnit.CurrentGear.TryAdd(gear.Item1, (gear.Item2, gear.Item3, 0)))
                 {
-                    (string, int, bool) dictValue;
-                    AssignedUnit.StartingGear.TryGetValue(gear.Item1, out dictValue);
+                    (string, int, int) dictValue;
+                    AssignedUnit.CurrentGear.TryGetValue(gear.Item1, out dictValue);
                     dictValue.Item2++;
 
-                    AssignedUnit.StartingGear.Remove(gear.Item1);
-                    AssignedUnit.StartingGear.Add(gear.Item1, dictValue);
+                    AssignedUnit.CurrentGear.Remove(gear.Item1);
+                    AssignedUnit.CurrentGear.Add(gear.Item1, dictValue);
                 }
             }
 
@@ -84,31 +84,31 @@ namespace OPRRosterBuilder.Commands
         public bool undo() 
         {
             //Checks if the gear the option is replacing is either not present or has an upgrade attached.
-            (string, int, bool) targetValue;
-            foreach ((string, string, int, bool) target in AssignedOption.OptionGear)
+            (string, int, int) targetValue;
+            foreach ((string, string, int, int) target in AssignedOption.OptionGear)
             {
-                if (!AssignedUnit.StartingGear.TryGetValue(target.Item1, out targetValue) || targetValue.Item3)
+                if (!AssignedUnit.CurrentGear.TryGetValue(target.Item1, out targetValue) || targetValue.Item2 <= targetValue.Item3)
                 {
                     return false;
                 }
             }
 
             
-            foreach ((string, string, int, bool) target in AssignedOption.OptionGear)
+            foreach ((string, string, int, int) target in AssignedOption.OptionGear)
             {
 
                 //Decrements the target gear by 1 if it's being replaced
-                (string, int, bool) dictValue;
-                AssignedUnit.StartingGear.TryGetValue(target.Item1, out dictValue);
+                (string, int, int) dictValue;
+                AssignedUnit.CurrentGear.TryGetValue(target.Item1, out dictValue);
                 dictValue.Item2--;
                 if (dictValue.Item2 == 0)
                 {
-                    AssignedUnit.StartingGear.Remove(target.Item1);
+                    AssignedUnit.CurrentGear.Remove(target.Item1);
                 }
                 else
                 {
-                    AssignedUnit.StartingGear.Remove(target.Item1);
-                    AssignedUnit.StartingGear.Add(target.Item1, dictValue);
+                    AssignedUnit.CurrentGear.Remove(target.Item1);
+                    AssignedUnit.CurrentGear.Add(target.Item1, dictValue);
                 }
 
             }
@@ -116,15 +116,15 @@ namespace OPRRosterBuilder.Commands
             foreach ((string, string, int) gear in AssignedModifier.Target)
             {
 
-                if (!AssignedUnit.StartingGear.TryAdd(gear.Item1, (gear.Item2, gear.Item3, false)))
+                if (!AssignedUnit.CurrentGear.TryAdd(gear.Item1, (gear.Item2, gear.Item3, 0)))
                 {
 
-                    (string, int, bool) dictValue;
-                    AssignedUnit.StartingGear.TryGetValue(gear.Item1, out dictValue);
+                    (string, int, int) dictValue;
+                    AssignedUnit.CurrentGear.TryGetValue(gear.Item1, out dictValue);
                     dictValue.Item2++;
 
-                    AssignedUnit.StartingGear.Remove(gear.Item1);
-                    AssignedUnit.StartingGear.Add(gear.Item1, dictValue);
+                    AssignedUnit.CurrentGear.Remove(gear.Item1);
+                    AssignedUnit.CurrentGear.Add(gear.Item1, dictValue);
                 }
             }
 

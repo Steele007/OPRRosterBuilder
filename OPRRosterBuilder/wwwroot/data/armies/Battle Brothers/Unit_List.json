@@ -2,6 +2,7 @@
   {
     "UnitName": "Master Brother",
     "UnitSize": 1,
+    "OriginalPoints": 55,
     "Points": 55,
     "Quality": 3,
     "Defense": 3,
@@ -9,15 +10,27 @@
       "Heavy Rifle": {
         "Item1": "(24\", A1, AP(1))",
         "Item2": 1,
-        "Item3" :  false
+        "Item3": 0
       },
       "CCW": {
         "Item1": "(A1)",
         "Item2": 1,
-        "Item3": false
+        "Item3": 0
       }
     },
-    "SpecialRules": ["Fearless", "Hero", "Tough(3)"],
+    "CurrentGear": {
+      "Heavy Rifle": {
+        "Item1": "(24\", A1, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A1)",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fearless", "Hero", "Tough(3)" ],
     "Modifiers": [
       {
         "ModType": 0,
@@ -30,7 +43,7 @@
           {
             "Item1": "CCW",
             "Item2": "(A1)",
-            "Item3": 1           
+            "Item3": 1
           }
         ],
         "Options": [
@@ -40,13 +53,13 @@
                 "Item1": "Heavy Pistol",
                 "Item2": "(12\", A1, AP(1))",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               },
               {
                 "Item1": "CCW",
                 "Item2": "(A2)",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 0,
@@ -58,7 +71,7 @@
                 "Item1": "Dual Energy Claws",
                 "Item2": "(A4, Rending)",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 10,
@@ -70,7 +83,7 @@
                 "Item1": "Heavy Chainsaw Sword",
                 "Item2": "(A4, AP(1))",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 10,
@@ -96,7 +109,7 @@
                 "Item1": "Plasma Pistol",
                 "Item2": "(12\", A1, AP(4))",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 5,
@@ -108,7 +121,7 @@
                 "Item1": "Combat Shield",
                 "Item2": "(Shield Wall)",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 10,
@@ -120,7 +133,7 @@
                 "Item1": "Gravity Pistol",
                 "Item2": "(12\", A3, Rending)",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 10,
@@ -132,7 +145,7 @@
                 "Item1": "Storm Rifle",
                 "Item2": "(24\", A3, AP(1))",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 30,
@@ -158,7 +171,7 @@
                 "Item1": "Energy Hammer",
                 "Item2": "(A1, Blast(3))",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 10,
@@ -170,7 +183,7 @@
                 "Item1": "Energy Sword",
                 "Item2": "(A2, AP(1), Rending)",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 10,
@@ -182,7 +195,7 @@
                 "Item1": "Chain-Fist",
                 "Item2": "(A1, AP(2), Deadly(3))",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 15,
@@ -194,7 +207,7 @@
                 "Item1": "Energy Fist",
                 "Item2": "(A2, AP(4))",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 15,
@@ -220,7 +233,7 @@
                 "Item1": "Plasma-Mod",
                 "Item2": "(12\", A1, AP(4))",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 10,
@@ -232,7 +245,7 @@
                 "Item1": "Fusion-Mod",
                 "Item2": "(6\", A1, AP(4), Deadly(3))",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 15,
@@ -244,7 +257,7 @@
                 "Item1": "Flamer-Mod",
                 "Item2": "(6\", A6)",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 15,
@@ -256,10 +269,4525 @@
                 "Item1": "Gravity-Mod",
                 "Item2": "(9\", A3, Rending)",
                 "Item3": 1,
-                "Item4": false
+                "Item4": 0
               }
             ],
             "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Jetpack",
+                "Item2": "(Ambush, Flying)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 25,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Destroyer Armor",
+                "Item2": "(Ambush, Tough(+3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 70,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Combat Bike",
+                "Item2": "(Fast, Tough(+3))",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "Twin Heavy Rifle",
+                "Item2": "(24\", A2, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 90,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Veteran Infantry",
+                "Item2": "",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 20,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Preacher",
+                "Item2": "(War Chant)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": 0
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Archivist",
+                "Item2": "(Psychic(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 25,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Engineer",
+                "Item2": "(Repair)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 25,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Captain",
+                "Item2": "(Advanced Tactics)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Elite Pathfinder",
+    "UnitSize": 1,
+    "OriginalPoints": 45,
+    "Points": 45,
+    "Quality": 4,
+    "Defense": 4,
+    "StartingGear": {
+      "Heavy Rifle": {
+        "Item1": "(24\", A1, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A1)",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Heavy Rifle": {
+        "Item1": "(24\", A1, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A1)",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fearless", "Hero", "Strider", "Tough(3)" ],
+    "Modifiers": [
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          },
+          {
+            "Item1": "CCW",
+            "Item2": "(A1)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Pistol",
+                "Item2": "(12\", A1, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "CCW",
+                "Item2": "(A2)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 0,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Dual Energy Claws",
+                "Item2": "(A4, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Chainsaw Sword",
+                "Item2": "(A4, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Pistol",
+            "Item2": "(12\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma Pistol",
+                "Item2": "(12\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Combat Shield",
+                "Item2": "(Shield Wall)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity Pistol",
+                "Item2": "(12\", A3, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Storm Rifle",
+                "Item2": "(24\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 30,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "CCW",
+            "Item2": "(A1)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Hammer",
+                "Item2": "(A1, Blast(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Sword",
+                "Item2": "(A2, AP(1), Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Chain-Fist",
+                "Item2": "(A1, AP(2), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Fist",
+                "Item2": "(A2, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma-Mod",
+                "Item2": "(12\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Fusion-Mod",
+                "Item2": "(6\", A1, AP(4), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Flamer-Mod",
+                "Item2": "(6\", A6)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity-Mod",
+                "Item2": "(9\", A3, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Preacher",
+                "Item2": "(War Chant)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Archivist",
+                "Item2": "(Psychic(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 25,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Engineer",
+                "Item2": "(Repair)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 25,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Captain",
+                "Item2": "(Advanced Tactics)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 4,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Camo Cloak",
+                "Item2": "(Stealth)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Forward Sentry",
+                "Item2": "(Scout)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 2,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Pathfinders",
+    "UnitSize": 5,
+    "OriginalPoints": 115,
+    "Points": 115,
+    "Quality": 4,
+    "Defense": 4,
+    "StartingGear": {
+      "Heavy Rifle": {
+        "Item1": "(24\", A1, AP(1))",
+        "Item2": 5,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A1)",
+        "Item2": 5,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Heavy Rifle": {
+        "Item1": "(24\", A1, AP(1))",
+        "Item2": 5,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A1)",
+        "Item2": 5,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fearless", "Strider" ],
+    "Modifiers": [
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          },
+          {
+            "Item1": "CCW",
+            "Item2": "(A1)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Pistol",
+                "Item2": "(12\", A1, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "CCW",
+                "Item2": "(A2)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 0,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Dual Energy Claws",
+                "Item2": "(A4, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Chainsaw Sword",
+                "Item2": "(A4, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Pistol",
+            "Item2": "(12\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma Pistol",
+                "Item2": "(12\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Combat Shield",
+                "Item2": "(Shield Wall)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity Pistol",
+                "Item2": "(12\", A3, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Storm Rifle",
+                "Item2": "(24\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 30,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "CCW",
+            "Item2": "(A1)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Hammer",
+                "Item2": "(A1, Blast(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Sword",
+                "Item2": "(A2, AP(1), Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Chain-Fist",
+                "Item2": "(A1, AP(2), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Fist",
+                "Item2": "(A2, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma-Mod",
+                "Item2": "(12\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Fusion-Mod",
+                "Item2": "(6\", A1, AP(4), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Flamer-Mod",
+                "Item2": "(6\", A6)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity-Mod",
+                "Item2": "(9\", A3, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 1,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          },
+          {
+            "Item1": "CCW",
+            "Item2": "(A1)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Pistol",
+                "Item2": "(12\", A1, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "CCW",
+                "Item2": "(A2)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": -5,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 2,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Shotgun",
+                "Item2": "(12\", A2, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 0,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Sniper Rifle",
+                "Item2": "(30\", A1, AP(1), Sniper)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 20,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 5,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma Rifle",
+                "Item2": "(24\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Flamethrower",
+                "Item2": "(12\", A6)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity Rifle",
+                "Item2": "(18\", A3, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Machinegun",
+                "Item2": "(30\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 20,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Missile Launcher",
+                "Item2": "(30\", A1, AP(2), Deadly(3), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 30,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 7,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Camo Cloaks",
+                "Item2": "(Stealth)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Forward Sentries",
+                "Item2": "(Scout)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 2,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Assault Brothers",
+    "UnitSize": 5,
+    "OriginalPoints": 140,
+    "Points": 140,
+    "Quality": 3,
+    "Defense": 3,
+    "StartingGear": {
+      "Heavy Pistol": {
+        "Item1": "(12\", A1, AP(1))",
+        "Item2": 5,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A2)",
+        "Item2": 5,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Heavy Pistol": {
+        "Item1": "(12\", A1, AP(1))",
+        "Item2": 5,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A2)",
+        "Item2": 5,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fearless" ],
+    "Modifiers": [
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Pistol",
+            "Item2": "(12\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma Pistol",
+                "Item2": "(12\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Combat Shield",
+                "Item2": "(Shield Wall)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity Pistol",
+                "Item2": "(12\", A3, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Storm Rifle",
+                "Item2": "(24\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 30,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "CCW",
+            "Item2": "(A2)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Hammer",
+                "Item2": "(A1, Blast(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Sword",
+                "Item2": "(A2, AP(1), Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Chain-Fist",
+                "Item2": "(A1, AP(2), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Fist",
+                "Item2": "(A2, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 7,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Jetpack",
+                "Item2": "(Ambush, Flying)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 40,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Veteran Infantry",
+                "Item2": "",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 100,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 2,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 6,
+        "Target": [
+          {
+            "Item1": "Heavy Pistol",
+            "Item2": "(12\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma Pistol",
+                "Item2": "(12\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Flamethrower",
+                "Item2": "(12\", A6)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 2,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Pistol",
+            "Item2": "(12\", A1, AP(1))",
+            "Item3": 1,
+            "Item4": 0
+          },
+          {
+            "Item1": "CCW",
+            "Item2": "(A2)",
+            "Item3": 1,
+            "Item4": 0
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Pistol",
+                "Item2": "(12\", A1, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "Energy Hammer",
+                "Item2": "(A1, Blast(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Pistol",
+                "Item2": "(12\", A1, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "Energy Sword",
+                "Item2": "(A2, AP(1), Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Chainsaw Sword",
+                "Item2": "(A4, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Pistol",
+                "Item2": "(12\", A1, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "Energy Fist",
+                "Item2": "(A2, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Battle Brothers",
+    "UnitSize": 5,
+    "OriginalPoints": 145,
+    "Points": 145,
+    "Quality": 3,
+    "Defense": 3,
+    "StartingGear": {
+      "Heavy Rifle": {
+        "Item1": "(24\", A1, AP(1))",
+        "Item2": 5,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A1)",
+        "Item2": 5,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Heavy Rifle": {
+        "Item1": "(24\", A1, AP(1))",
+        "Item2": 5,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A1)",
+        "Item2": 5,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fearless" ],
+    "Modifiers": [
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          },
+          {
+            "Item1": "CCW",
+            "Item2": "(A1)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Pistol",
+                "Item2": "(12\", A1, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "CCW",
+                "Item2": "(A2)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 0,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Dual Energy Claws",
+                "Item2": "(A4, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Chainsaw Sword",
+                "Item2": "(A4, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Pistol",
+            "Item2": "(12\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma Pistol",
+                "Item2": "(12\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Combat Shield",
+                "Item2": "(Shield Wall)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity Pistol",
+                "Item2": "(12\", A3, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Storm Rifle",
+                "Item2": "(24\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 30,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "CCW",
+            "Item2": "(A1)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Hammer",
+                "Item2": "(A1, Blast(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Sword",
+                "Item2": "(A2, AP(1), Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Chain-Fist",
+                "Item2": "(A1, AP(2), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Fist",
+                "Item2": "(A2, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma-Mod",
+                "Item2": "(12\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Fusion-Mod",
+                "Item2": "(6\", A1, AP(4), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Flamer-Mod",
+                "Item2": "(6\", A6)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity-Mod",
+                "Item2": "(9\", A3, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 5,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Veteran Infantry",
+                "Item2": "",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 100,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 8,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Battle Standard",
+                "Item2": "(Fear)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 20,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Medical Training",
+                "Item2": "",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 55,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma Rifle",
+                "Item2": "(24\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Fusion Rifle",
+                "Item2": "(12\", A1, AP(4), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity Rifle",
+                "Item2": "(18\", A3, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Flamethrower",
+                "Item2": "(12\", A6)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Flamethrower",
+                "Item2": "(12\", A6, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 20,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Machinegun",
+                "Item2": "(30\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 30,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity Cannon",
+                "Item2": "(18\", A6, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Missile Launcher",
+                "Item2": "(30\", A1, AP(2), Deadly(3), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 45,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma Cannon",
+                "Item2": "(30\", A1, Blast(3), AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 45,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Fusion Rifle",
+                "Item2": "(18\", A1, AP(4), Deadly(6))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 50,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Laser Cannon",
+                "Item2": "(36\", A1, AP(3), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 50,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Support Brothers",
+    "UnitSize": 5,
+    "OriginalPoints": 280,
+    "Points": 280,
+    "Quality": 3,
+    "Defense": 3,
+    "StartingGear": {
+      "Heavy Flamethrower": {
+        "Item1": "(12\", A6, AP(1))",
+        "Item2": 5,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A1)",
+        "Item2": 5,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Heavy Flamethrower": {
+        "Item1": "(12\", A6, AP(1))",
+        "Item2": 5,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A1)",
+        "Item2": 5,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fearless", "Relentless" ],
+    "Modifiers": [
+      {
+        "ModType": 2,
+        "Target": [
+          {
+            "Item1": "Heavy Flamethrower",
+            "Item2": "(12\", A6, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Machinegun",
+                "Item2": "(30\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity Cannon",
+                "Item2": "(18\", A6, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Missile Launcher",
+                "Item2": "(30\", A1, AP(2), Deadly(3), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 25,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma Cannon",
+                "Item2": "(30\", A1, Blast(3), AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 30,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Fusion Rifle",
+                "Item2": "(18\", A1, AP(4), Deadly(6))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Laser Cannon",
+                "Item2": "(36\", A1, AP(3), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 5,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Destroyers",
+    "UnitSize": 3,
+    "OriginalPoints": 255,
+    "Points": 255,
+    "Quality": 3,
+    "Defense": 3,
+    "StartingGear": {
+      "Dual Energy Claws": {
+        "Item1": "(A6, Rending)",
+        "Item2": 3,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Dual Energy Claws": {
+        "Item1": "(A6, Rending)",
+        "Item2": 3,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Ambush", "Fearless", "Tough(3)" ],
+    "Modifiers": [
+      {
+        "ModType": 1,
+        "Target": [
+          {
+            "Item1": "Dual Energy Claws",
+            "Item2": "(A6, Rending)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Combat Shield",
+                "Item2": "(Shield Wall)",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "Energy Hammer",
+                "Item2": "(A2, Blast(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Storm Rifle",
+                "Item2": "(24\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "CCW",
+                "Item2": "(A3)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 45,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Storm Rifle",
+            "Item2": "(24\", A3, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Flamethrower",
+                "Item2": "(12\", A6, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 0,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Minigun",
+                "Item2": "(24\", A4, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 2,
+        "Target": [
+          {
+            "Item1": "CCW",
+            "Item2": "(A3)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Sword",
+                "Item2": "(A3, AP(1), Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 20,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Fist",
+                "Item2": "(A3, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 25,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Chain-Fist",
+                "Item2": "(A32, AP(2), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 3,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 8,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Cyclone Missiles",
+                "Item2": "(24\", A1, AP(2), Deadly(3), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 45,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Pathfinder Bikers",
+    "UnitSize": 3,
+    "OriginalPoints": 220,
+    "Points": 220,
+    "Quality": 4,
+    "Defense": 4,
+    "StartingGear": {
+      "Grenade Launcher": {
+        "Item1": "(24\", A1, Blast(3))",
+        "Item2": 3,
+        "Item3": 0
+      },
+      "Heavy Pistol": {
+        "Item1": "(12\", A1, AP(1))",
+        "Item2": 3,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A2)",
+        "Item2": 3,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Grenade Launcher": {
+        "Item1": "(24\", A1, Blast(3))",
+        "Item2": 3,
+        "Item3": 0
+      },
+      "Heavy Pistol": {
+        "Item1": "(12\", A1, AP(1))",
+        "Item2": 3,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A2)",
+        "Item2": 3,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fast", "Fearless", "Scout", "Tough(3)" ],
+    "Modifiers": [
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          },
+          {
+            "Item1": "CCW",
+            "Item2": "(A2)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Pistol",
+                "Item2": "(12\", A1, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "CCW",
+                "Item2": "(A2)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 0,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Dual Energy Claws",
+                "Item2": "(A4, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Chainsaw Sword",
+                "Item2": "(A4, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Pistol",
+            "Item2": "(12\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma Pistol",
+                "Item2": "(12\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Combat Shield",
+                "Item2": "(Shield Wall)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity Pistol",
+                "Item2": "(12\", A3, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Storm Rifle",
+                "Item2": "(24\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 30,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "CCW",
+            "Item2": "(A2)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Hammer",
+                "Item2": "(A1, Blast(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Sword",
+                "Item2": "(A2, AP(1), Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Chain-Fist",
+                "Item2": "(A1, AP(2), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Fist",
+                "Item2": "(A2, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma-Mod",
+                "Item2": "(12\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Fusion-Mod",
+                "Item2": "(6\", A1, AP(4), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Flamer-Mod",
+                "Item2": "(6\", A6)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity-Mod",
+                "Item2": "(9\", A3, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 2,
+        "Target": [
+          {
+            "Item1": "Grenade Launcher",
+            "Item2": "(24\", A1, Blast(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Heavy Rifle",
+                "Item2": "(24\", A2, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 3,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 1,
+        "Target": [
+          {
+            "Item1": "Heavy Pistol",
+            "Item2": "(12\", A1, AP(1))",
+            "Item3": 1
+          },
+          {
+            "Item1": "CCW",
+            "Item2": "(A2)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Rifle",
+                "Item2": "(24\", A1, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "CCW",
+                "Item2": "(A1)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Brother Bikers",
+    "UnitSize": 3,
+    "OriginalPoints": 270,
+    "Points": 270,
+    "Quality": 3,
+    "Defense": 3,
+    "StartingGear": {
+      "Twin Heavy Rifle": {
+        "Item1": "(24\", A2, AP(1))",
+        "Item2": 3,
+        "Item3": 0
+      },
+      "Heavy Pistol": {
+        "Item1": "(12\", A1, AP(1))",
+        "Item2": 3,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A2)",
+        "Item2": 3,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Twin Heavy Rifle": {
+        "Item1": "(24\", A2, AP(1)))",
+        "Item2": 3,
+        "Item3": 0
+      },
+      "Heavy Pistol": {
+        "Item1": "(12\", A1, AP(1))",
+        "Item2": 3,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A2)",
+        "Item2": 3,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fast", "Fearless", "Tough(3)" ],
+    "Modifiers": [
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          },
+          {
+            "Item1": "CCW",
+            "Item2": "(A2)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Pistol",
+                "Item2": "(12\", A1, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "CCW",
+                "Item2": "(A2)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 0,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Dual Energy Claws",
+                "Item2": "(A4, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Chainsaw Sword",
+                "Item2": "(A4, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Pistol",
+            "Item2": "(12\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma Pistol",
+                "Item2": "(12\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Combat Shield",
+                "Item2": "(Shield Wall)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity Pistol",
+                "Item2": "(12\", A3, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Storm Rifle",
+                "Item2": "(24\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 30,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "CCW",
+            "Item2": "(A2)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Hammer",
+                "Item2": "(A1, Blast(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Sword",
+                "Item2": "(A2, AP(1), Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Chain-Fist",
+                "Item2": "(A1, AP(2), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Energy Fist",
+                "Item2": "(A2, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma-Mod",
+                "Item2": "(12\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Fusion-Mod",
+                "Item2": "(6\", A1, AP(4), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Flamer-Mod",
+                "Item2": "(6\", A6)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity-Mod",
+                "Item2": "(9\", A3, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 1,
+        "Target": [
+          {
+            "Item1": "Heavy Pistol",
+            "Item2": "(12\", A1, AP(1))",
+            "Item3": 1
+          },
+          {
+            "Item1": "CCW",
+            "Item2": "(A2)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Rifle",
+                "Item2": "(24\", A1, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "CCW",
+                "Item2": "(A1)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 6,
+        "Target": [
+          {
+            "Item1": "Heavy Rifle",
+            "Item2": "(24\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Plasma Rifle",
+                "Item2": "(24\", A1, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Fusion Rifle",
+                "Item2": "(12\", A1, AP(4), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Flamethrower",
+                "Item2": "(12\", A6)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Gravity Rifle",
+                "Item2": "(18\", A3, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 2,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Support Bike",
+    "UnitSize": 1,
+    "OriginalPoints": 180,
+    "Points": 180,
+    "Quality": 3,
+    "Defense": 3,
+    "StartingGear": {
+      "Twin Heavy Rifle": {
+        "Item1": "(24\", A2, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Heavy Flamethrower": {
+        "Item1": "(12\", A6, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Heavy Pistol": {
+        "Item1": "(12\", A1, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A3)",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Twin Heavy Rifle": {
+        "Item1": "(24\", A2, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Heavy Flamethrower": {
+        "Item1": "(12\", A6, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Heavy Pistol": {
+        "Item1": "(12\", A1, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "CCW": {
+        "Item1": "(A3)",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fast", "Fearless", "Tough(6)" ],
+    "Modifiers": [
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Flamethrower",
+            "Item2": "(12\", A6, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Machinegun",
+                "Item2": "(30\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Fusion Rifle",
+                "Item2": "(18\", A1, AP(4), Deadly(6))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 30,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Pistol",
+            "Item2": "(12\", A1, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Rifle",
+                "Item2": "(24\", A1, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "APC",
+    "UnitSize": 1,
+    "OriginalPoints": 215,
+    "Points": 215,
+    "Quality": 3,
+    "Defense": 2,
+    "StartingGear": {
+      "Storm Rifle": {
+        "Item1": "(24\", A3, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Storm Rifle": {
+        "Item1": "(24\", A3, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fast", "Fearless", "Impact(6)", "Tough(6)", "Transport(11)" ],
+    "Modifiers": [
+      {
+        "ModType": 4,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Storm Rifle",
+                "Item2": "(24\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Dozer Blade",
+                "Item2": "(Strider)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 40,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Hunter Missiles",
+                "Item2": "(24\", A1, AP(2), Deadly(3), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 45,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 3,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Attack APC",
+    "UnitSize": 1,
+    "OriginalPoints": 235,
+    "Points": 235,
+    "Quality": 3,
+    "Defense": 2,
+    "StartingGear": {
+      "Twin Heavy Flamethrower": {
+        "Item1": "(12\", A12, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Twin Heavy Flamethrower": {
+        "Item1": "(12\", A12, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fast", "Fearless", "Impact(6)", "Tough(6)", "Transport(6)" ],
+    "Modifiers": [
+      {
+        "ModType": 4,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Storm Rifle",
+                "Item2": "(24\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Dozer Blade",
+                "Item2": "(Strider)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 40,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Hunter Missiles",
+                "Item2": "(24\", A1, AP(2), Deadly(3), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 45,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 3,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Twin Heavy Flamethrower",
+            "Item2": "(12\", A12, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Heavy Machinegun",
+                "Item2": "(30\", A6, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Minigun",
+                "Item2": "(24\", A8, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 25,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Laser Cannon",
+                "Item2": "(36\", A1, AP(3), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              },
+              {
+                "Item1": "Twin Plasma Rifle",
+                "Item2": "(24\", A2, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Laser Cannon",
+                "Item2": "(36\", A2, AP(3), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 60,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Drop Pod",
+    "UnitSize": 1,
+    "OriginalPoints": 145,
+    "Points": 145,
+    "Quality": 3,
+    "Defense": 2,
+    "StartingGear": {
+      "Death Launcher": {
+        "Item1": "(18\", A1, Blast(6))",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Death Launcher": {
+        "Item1": "(18\", A1, Blast(6))",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Ambush", "Fearless", "Immobile", "Tough(6)", "Transport(11)" ],
+    "Modifiers": [
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Death Launcher",
+            "Item2": "(18\", A1, Blast(6))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Storm Rifle",
+                "Item2": "(24\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Battle Tank",
+    "UnitSize": 1,
+    "OriginalPoints": 480,
+    "Points": 480,
+    "Quality": 3,
+    "Defense": 2,
+    "StartingGear": {
+      "Twin Heavy Machineguns": {
+        "Item1": "(30\", A6, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Demolition Cannon": {
+        "Item1": "(24\", A1, Blast(6), AP(4), Indirect)",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Twin Heavy Machineguns": {
+        "Item1": "(30\", A6, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Demolition Cannon": {
+        "Item1": "(24\", A1, Blast(6), AP(4), Indirect)",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fast", "Fearless", "Impact(6)", "Tough(12)" ],
+    "Modifiers": [
+      {
+        "ModType": 4,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Storm Rifle",
+                "Item2": "(24\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Dozer Blade",
+                "Item2": "(Strider)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 40,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Hunter Missiles",
+                "Item2": "(24\", A1, AP(2), Deadly(3), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 45,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 3,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Demolition Cannon",
+            "Item2": "(24\", A1, Blast(6), AP(4), Indirect)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Spear Missile Launcher",
+                "Item2": "(30\", A1, AP(3), Deadly(6), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Laser Cannon",
+                "Item2": "(36\", A2, AP(3), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Rapid Autocannon",
+                "Item2": "(36\", A6, AP(2))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Storm Cannon",
+                "Item2": "(30\", A6, AP(2), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 20,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Wind Missile Launcher",
+                "Item2": "(36\", A3, Blast(3), AP(1), Indirect)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 90,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Twin Heavy Machineguns",
+            "Item2": "(30\", A6, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Laser Cannons",
+                "Item2": "(36\", A2, AP(3), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 45,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Heavy Tank",
+    "UnitSize": 1,
+    "OriginalPoints": 630,
+    "Points": 630,
+    "Quality": 3,
+    "Defense": 2,
+    "StartingGear": {
+      "Twin Heavy Machineguns": {
+        "Item1": "(30\", A6, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Twin Flamethrower Cannons": {
+        "Item1": "(18\", A12, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Twin Heavy Machineguns": {
+        "Item1": "(30\", A6, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Twin Flamethrower Cannons": {
+        "Item1": "(18\", A12, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fast", "Fearless", "Impact(6)", "Tough(18)", "Transport(11)" ],
+    "Modifiers": [
+      {
+        "ModType": 4,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Storm Rifle",
+                "Item2": "(24\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Dozer Blade",
+                "Item2": "(Strider)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 40,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Hunter Missiles",
+                "Item2": "(24\", A1, AP(2), Deadly(3), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 45,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 3,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Twin Flamethrower Cannons",
+            "Item2": "(18\", A12, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Heavy Rifle Arrays",
+                "Item2": "(24\", A12, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Quad Laser Cannons",
+                "Item2": "(36\", A4, AP(3), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 155,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Twin Heavy Machineguns",
+            "Item2": "(30\", A6, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Minigun",
+                "Item2": "(24\", A8, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Fusion Rifle",
+                "Item2": "(18\", A1, AP(4), Deadly(6))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 65,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Artillery Gun",
+    "UnitSize": 1,
+    "OriginalPoints": 260,
+    "Points": 260,
+    "Quality": 3,
+    "Defense": 2,
+    "StartingGear": {
+      "Heavy Flak Cannon": {
+        "Item1": "(30\", A2, AP(3), Deadly(3), Lock-On)",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Engineer Crew": {
+        "Item1": "(A3, AP(2))",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Heavy Flak Cannon": {
+        "Item1": "(30\", A2, AP(3), Deadly(3), Lock-On)",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Engineer Crew": {
+        "Item1": "(A3, AP(2))",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fearless", "Repair", "Slow", "Tough(6)" ],
+    "Modifiers": [
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Flak Cannon",
+            "Item2": "(30\", A2, AP(3), Deadly(3), Lock-On)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Gatling Cannon",
+                "Item2": "(24\", A12, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Thunder Cannon",
+                "Item2": "(30\", A2, Blast(3), AP(2), Indirect)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Crack Cannon",
+                "Item2": "(30\", A9, AP(1), Rending, Indirect)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 80,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Attack Speeder",
+    "UnitSize": 1,
+    "OriginalPoints": 255,
+    "Points": 255,
+    "Quality": 3,
+    "Defense": 2,
+    "StartingGear": {
+      "Heavy Flamethrower": {
+        "Item1": "(12\", A6, AP(1))",
+        "Item2": 2,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Heavy Flamethrower": {
+        "Item1": "(12\", A6, AP(1))",
+        "Item2": 2,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Ambush", "Fast", "Fearless", "Impact(6)", "Strider", "Tough(6)" ],
+    "Modifiers": [
+      {
+        "ModType": 2,
+        "Target": [
+          {
+            "Item1": "Heavy Flamethrower",
+            "Item2": "(12\", A6, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Machinegun",
+                "Item2": "(30\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Minigun",
+                "Item2": "(24\", A4, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Fusion Rifle",
+                "Item2": "(18\", A1, AP(4), Deadly(6))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 25,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 2,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Heavy Flamethrower",
+            "Item2": "(12\", A6, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Typhoon Missiles",
+                "Item2": "(24\", A4, AP(2), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Open Sides",
+                "Item2": "(Transport(6))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Heavy Exo-Suit",
+    "UnitSize": 1,
+    "OriginalPoints": 185,
+    "Points": 185,
+    "Quality": 3,
+    "Defense": 2,
+    "StartingGear": {
+      "Twin Fusion Rifle": {
+        "Item1": "(12\", A2, AP(4), Deadly(3))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Stomp": {
+        "Item1": "(A2, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Twin Fusion Rifle": {
+        "Item1": "(12\", A2, AP(4), Deadly(3))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Stomp": {
+        "Item1": "(A2, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fear", "Fearless", "Tough(6)" ],
+    "Modifiers": [
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Twin Fusion Rifle",
+            "Item2": "(12\", A2, AP(4), Deadly(3))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Flamethrower",
+                "Item2": "(12\", A12)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 5,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Heavy Machinegun",
+                "Item2": "(30\", A6, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 40,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Gravity Cannon",
+                "Item2": "(18\", A12, Rending)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 45,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Laser Cannon",
+                "Item2": "(36\", A2, AP(3), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 80,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Dual Heavy Fists",
+                "Item2": "(A2, Blast(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 20,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Dual Combat Drills",
+                "Item2": "(A4, AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Rifle Array",
+                "Item2": "(24\", A6, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 65,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Cyclone Missiles Array",
+                "Item2": "(24\", A2, AP(2), Deadly(3), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 90,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Attack Walker",
+    "UnitSize": 1,
+    "OriginalPoints": 330,
+    "Points": 330,
+    "Quality": 3,
+    "Defense": 2,
+    "StartingGear": {
+      "Stomp": {
+        "Item1": "(A4, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Walker Fist": {
+        "Item1": "(A4, AP(4))",
+        "Item2": 2,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Stomp": {
+        "Item1": "(A4, AP(1))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Walker Fist": {
+        "Item1": "(A4, AP(4))",
+        "Item2": 2,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Fear", "Fearless", "Tough(12)" ],
+    "Modifiers": [
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Walker Fist",
+            "Item2": "(A4, AP(4))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Missile Array",
+                "Item2": "(30\", A4, AP(2), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 55,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Autocannon",
+                "Item2": "(36\", A6, AP(2))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 95,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Walker Fist",
+            "Item2": "(A4, AP(4))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Fusion Rifle",
+                "Item2": "(18\", A1, AP(4), Deadly(6))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 25,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Heavy Flamethrower",
+                "Item2": "(12\", A12, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 30,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Rifle Array",
+                "Item2": "(24\", A6, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 30,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Minigun",
+                "Item2": "(24\", A6, AP(2))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 50,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Heavy Machinegun",
+                "Item2": "(30\", A6, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 50,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Plasma Cannon",
+                "Item2": "(30\", A1, Blast(6), AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 70,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Laser Cannon",
+                "Item2": "(36\", A2, AP(3), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 70,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 9,
+        "Target": [
+          {
+            "Item1": "Walker Fist",
+            "Item2": "(A4, AP(4))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Fusion Rifle",
+                "Item2": "(12\", A1, AP(4), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 25,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Heavy Flamethrower",
+                "Item2": "(12\", A6, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Storm Rifle",
+                "Item2": "(24\", A3, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 35,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 2,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Veteran Walker",
+                "Item2": "",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 70,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Light Gunship",
+    "UnitSize": 1,
+    "OriginalPoints": 295,
+    "Points": 295,
+    "Quality": 3,
+    "Defense": 2,
+    "StartingGear": {
+      "Twin Typhoon Missiles": {
+        "Item1": "(24\", A4, AP(2), Lock-On)",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Twin Minigun": {
+        "Item1": "(24\", A8, AP(1))",
+        "Item2": 2,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Twin Typhoon Missiles": {
+        "Item1": "(24\", A4, AP(2), Lock-On)",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Twin Minigun": {
+        "Item1": "(24\", A8, AP(1))",
+        "Item2": 2,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Aircraft", "Fearless", "Tough(6)" ],
+    "Modifiers": [
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Laser Talon",
+                "Item2": "(24\", A3, AP(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 50,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Storm Cannon",
+                "Item2": "(30\", A3, AP(2), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 65,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Twin Typhoon Missiles",
+            "Item2": "(24\", A4, AP(2), Lock-On)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Heavy Machinegun",
+                "Item2": "(30\", A6, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 10,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Laser Cannon",
+                "Item2": "(36\", A2, AP(3), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 55,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Hammer Missiles",
+                "Item2": "(36\", A2, AP(3), Deadly(3), Lock-On)",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 85,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      }
+    ]
+  },
+  {
+    "UnitName": "Heavy Gunship",
+    "UnitSize": 1,
+    "OriginalPoints": 520,
+    "Points": 520,
+    "Quality": 3,
+    "Defense": 2,
+    "StartingGear": {
+      "Storm Missiles": {
+        "Item1": "(36\", A1, AP(3), Deadly(3))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Twin Minigun": {
+        "Item1": "(24\", A8, AP(1))",
+        "Item2": 2,
+        "Item3": 0
+      },
+      "Twin Typhoon Missiles": {
+        "Item1": "(24\", A4, AP(2), Lock-On)",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "CurrentGear": {
+      "Storm Missiles": {
+        "Item1": "(36\", A1, AP(3), Deadly(3))",
+        "Item2": 1,
+        "Item3": 0
+      },
+      "Twin Minigun": {
+        "Item1": "(24\", A8, AP(1))",
+        "Item2": 2,
+        "Item3": 0
+      },
+      "Twin Typhoon Missiles": {
+        "Item1": "(24\", A4, AP(2), Lock-On)",
+        "Item2": 1,
+        "Item3": 0
+      }
+    },
+    "SpecialRules": [ "Aircraft", "Fearless", "Tough(12)", "Transport(11)" ],
+    "Modifiers": [
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Twin Minigun",
+            "Item2": "(24\", A8, AP(1))",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Plasma Cannon",
+                "Item2": "(30\", A2, Blast(3), AP(4))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 25,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Laser Cannon",
+                "Item2": "(36\", A2, AP(3), Deadly(3))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 40,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 0,
+        "Target": [
+          {
+            "Item1": "Twin Typhoon Missiles",
+            "Item2": "(24\", A4, AP(2), Lock-On)",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Heavy Machinegun",
+                "Item2": "(30\", A6, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 15,
+            "OptionPicked": false
+          },
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Heavy Fusion Rifle",
+                "Item2": "(18\", A2, AP(4), Deadly(6))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 55,
+            "OptionPicked": false
+          }
+        ],
+        "TargetNum": 1,
+        "CurrentNum": 0
+      },
+      {
+        "ModType": 3,
+        "Target": [
+          {
+            "Item1": "self",
+            "Item2": "self",
+            "Item3": 1
+          }
+        ],
+        "Options": [
+          {
+            "OptionGear": [
+              {
+                "Item1": "Twin Heavy Rifle Arrays",
+                "Item2": "(24\", A12, AP(1))",
+                "Item3": 1,
+                "Item4": 0
+              }
+            ],
+            "OptionPoints": 135,
             "OptionPicked": false
           }
         ],

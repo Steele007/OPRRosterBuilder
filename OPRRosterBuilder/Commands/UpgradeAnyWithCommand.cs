@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace OPRRosterBuilder.Commands
 {
-    public class UpgradeCommand : IModifyCommand
+    public class UpgradeAnyWithCommand : IModifyCommand
     {
         public Unit AssignedUnit { get; set; }
         public Modifier AssignedModifier { get; set; }
         public ModifierOption AssignedOption { get; set; }
 
-        public UpgradeCommand(Unit unit, Modifier mod, ModifierOption option)
+        public UpgradeAnyWithCommand(Unit unit, Modifier mod, ModifierOption option)
         {
             this.AssignedUnit = unit;
             this.AssignedModifier = mod;
@@ -25,7 +25,7 @@ namespace OPRRosterBuilder.Commands
             foreach ((string, string, int) target in AssignedModifier.Target)
             {
                 (string, int, int) targetValue;
-                if ((!AssignedUnit.CurrentGear.TryGetValue(target.Item1, out targetValue) && !target.Item1.Equals("self")) || targetValue.Item3 == AssignedModifier.TargetNum)
+                if ((!AssignedUnit.CurrentGear.TryGetValue(target.Item1, out targetValue) && !target.Item1.Equals("self"))  || AssignedModifier.CurrentNum == targetValue.Item2)
                 {
                     return false;
                 }
@@ -33,10 +33,10 @@ namespace OPRRosterBuilder.Commands
 
             if (AssignedModifier.CurrentNum >= AssignedModifier.TargetNum)
             {
-               return false; 
+                return false;
             }
 
-            
+
 
             foreach ((string, string, int) target in AssignedModifier.Target)
             {
@@ -48,11 +48,11 @@ namespace OPRRosterBuilder.Commands
                     AssignedUnit.CurrentGear.Remove(target.Item1);
                     AssignedUnit.CurrentGear.Add(target.Item1, dictValue);
                 }
-                
+
             }
 
             foreach ((string, string, int, int) gear in AssignedOption.OptionGear)
-            {              
+            {
                 (string, int, int) dictValue;
                 if (AssignedUnit.CurrentGear.TryGetValue(gear.Item1, out dictValue))
                 {
@@ -65,10 +65,10 @@ namespace OPRRosterBuilder.Commands
                 else
                 {
                     AssignedUnit.CurrentGear.Add(gear.Item1, (gear.Item2, gear.Item3, gear.Item4));
-                }                              
+                }
             }
 
-                //For some reason AssignedOption.Item3 = true throws an error.
+            //For some reason AssignedOption.Item3 = true throws an error.
             ModifierOption temp = AssignedOption;
             temp.OptionPicked = true;
             AssignedOption = temp;
@@ -93,10 +93,10 @@ namespace OPRRosterBuilder.Commands
             }
 
             foreach ((string, string, int) target in AssignedModifier.Target)
-            {               
+            {
                 if (!target.Item1.Equals("self"))
                 {
-                    
+
                     (string, int, int) dictValue;
                     AssignedUnit.CurrentGear.TryGetValue(target.Item1, out dictValue);
                     if (dictValue.Item3 == 0)
@@ -107,7 +107,7 @@ namespace OPRRosterBuilder.Commands
                     AssignedUnit.CurrentGear.Remove(target.Item1);
                     AssignedUnit.CurrentGear.Add(target.Item1, dictValue);
                 }
-                
+
             }
 
             foreach ((string, string, int, int) gear in AssignedOption.OptionGear)
@@ -124,7 +124,7 @@ namespace OPRRosterBuilder.Commands
                     AssignedUnit.CurrentGear.Remove(gear.Item1);
                     AssignedUnit.CurrentGear.Add(gear.Item1, dictValue);
                 }
-                
+
             }
 
             //For some reason AssignedOption.Item3 = true throws an error.
