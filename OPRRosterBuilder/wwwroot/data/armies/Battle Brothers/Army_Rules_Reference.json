@@ -1,0 +1,61 @@
+[
+  {
+    "RulesName": "Special Rules",
+    "Rules": [
+      {
+        "name": "Advanced Tactics",
+        "text": "Once per activation, before attacking, pick 2 friendly units within 12\" of this model, which may move by up to 3\" each."
+      },
+      {
+        "name": "Medical Training",
+        "text": "This model and its unit get the Regeneration rule."
+      },
+      {
+        "name": "Repair",
+        "text": "Once per activation, if within 2\" of a unit with Tough, roll one die. On a 2+ you may repair D3 wounds from the target."
+      },
+      {
+        "name": "Shield Wall",
+        "text": "Enemies get -1 to hit when they attack units where all models have this rule."
+      },
+      {
+        "name": "Veteran Infantry",
+        "text": "This model gets +1 to hit rolls in melee and shooting."
+      },
+      {
+        "name": "War Chant",
+        "text": "The hero and its unit get +1 attack in melee when charging."
+
+      }
+    ]
+  },
+  {
+    "RulesName": "Psychic Spells",
+    "Rules": [
+      {
+        "name": "Blurred Sight (4+)",
+        "text": " Target 2 enemy units within 12\" get -1 to hit next time they shoot."
+      },
+      {
+        "name": "Psychic Terror (4+)",
+        "text": "Target enemy unit within 6\" takes 3 hits with AP(2)."
+      },
+      {
+        "name": "Cerebral Trauma (5+)",
+        "text": "Target enemy model within 12\" takes 2 hits with AP(4)."
+      },
+      {
+        "name": "Cursed Ground (5+)",
+        "text": "Target 2 enemy units within 6\" get -2\" next time they Advance, or -4\" next time they Charge/Rush."
+      },
+      {
+        "name": "Lightning Fog (6+)",
+        "text": "Target 2 enemy units within 6\" take 8 hits each"
+      },
+      {
+        "name": "Time Passage (6+)",
+        "text": "Target friendly unit within 12\" gets Impact(1) next time it charges"
+      }
+    ]
+  }
+]

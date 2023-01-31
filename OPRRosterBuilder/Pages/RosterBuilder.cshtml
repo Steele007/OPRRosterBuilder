@@ -6,7 +6,7 @@
 }
 
 
-@(await Html.RenderComponentAsync<ArmyList>(RenderMode.ServerPrerendered, new { ArmyName = Request.Query["p"].ToString()}))
+@(await Html.RenderComponentAsync<ArmyBuilder>(RenderMode.ServerPrerendered, new { ArmyName = Request.Query["p"].ToString()}))
 <script src="_framework/blazor.server.js"></script>
 <script src="/js/RosterFunctions.js"></script>
 

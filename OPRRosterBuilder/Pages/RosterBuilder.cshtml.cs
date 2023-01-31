@@ -31,11 +31,6 @@ namespace OPRRosterBuilder.Pages
             ArmyList = new List<Unit>();
         }
 
-        public void AddUnit(Unit unit)
-        {
-            Points += unit.Points;
-            ArmyList.Add(unit);
-        }
         
     }
 }

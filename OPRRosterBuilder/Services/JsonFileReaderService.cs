@@ -44,20 +44,7 @@ namespace OPRRosterBuilder.Services
 
         public IEnumerable<Unit> GetUnits(string name)
         {
-            /*StreamReader jsonFileReader;
-            try
-            {
-
-                jsonFileReader = File.OpenText(JsonFileName(name));
-
-            }catch(DirectoryNotFoundException e)
-            {
-
-            }
-            finally
-            {
-                jsonFileReader.Close();
-            }*/
+            
             try
             {
                 using (var jsonFileReader = File.OpenText(JsonFileName(name)))
