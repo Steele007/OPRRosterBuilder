@@ -1,7 +1,7 @@
 [
   {
     "RulesName": "Special Rules",
-    "Rules": [
+    "RulesList": [
       {
         "name": "Advanced Tactics",
         "text": "Once per activation, before attacking, pick 2 friendly units within 12\" of this model, which may move by up to 3\" each."
@@ -31,7 +31,7 @@
   },
   {
     "RulesName": "Psychic Spells",
-    "Rules": [
+    "RulesList": [
       {
         "name": "Blurred Sight (4+)",
         "text": " Target 2 enemy units within 12\" get -1 to hit next time they shoot."

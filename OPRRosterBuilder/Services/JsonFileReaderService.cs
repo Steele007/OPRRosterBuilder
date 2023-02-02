@@ -19,27 +19,21 @@ namespace OPRRosterBuilder.Services
 
         public IWebHostEnvironment WebHostEnvironment { get; }
 
-        private string JsonFileName()
+        //Gets core rules reference for printing an army list
+        private string RulesFileName()
         {
-             return Path.Combine(WebHostEnvironment.WebRootPath, "data", "armies", "Battle Brothers", "Unit_List.json");
+            return Path.Combine(WebHostEnvironment.WebRootPath, "data", "core", "Core_Rules_Reference.json");
         }
 
-        private string JsonFileName(string name)
+        //Gets army specific rules reference for printing an army list
+        private string RulesFileName(string name)
+        {
+            return Path.Combine(WebHostEnvironment.WebRootPath, "data", "armies", name, "Army_Rules_Reference.json");
+        }
+
+        private string ArmyListFileName(string name)
         {
             return Path.Combine(WebHostEnvironment.WebRootPath, "data", "armies", name, "Unit_List.json");
-        }
-
-
-        public IEnumerable<Unit> GetUnits()
-        {
-            using (var jsonFileReader = File.OpenText(JsonFileName()))
-            {
-                /*return JsonSerializer.Deserialize<Unit[]>(jsonFileReader.ReadToEnd(), new JsonSerializerOptions
-                {
-                    IncludeFields = true,
-                });*/
-                return JsonConvert.DeserializeObject<Unit[]>(jsonFileReader.ReadToEnd());
-            }
         }
 
         public IEnumerable<Unit> GetUnits(string name)
@@ -47,13 +41,47 @@ namespace OPRRosterBuilder.Services
             
             try
             {
-                using (var jsonFileReader = File.OpenText(JsonFileName(name)))
+                using (var jsonFileReader = File.OpenText(ArmyListFileName(name)))
                 {
                     /*return JsonSerializer.Deserialize<Unit[]>(jsonFileReader.ReadToEnd(), new JsonSerializerOptions
                     {
                         IncludeFields = true,
                     });*/
                     return JsonConvert.DeserializeObject<Unit[]>(jsonFileReader.ReadToEnd());
+                }
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                Console.Out.WriteLine(e.Message);
+            }
+
+            return null;
+        }
+
+        public Rules getArmyRules()
+        {
+            try
+            {
+                using (var jsonFileReader = File.OpenText(RulesFileName()))
+                {
+                    return JsonConvert.DeserializeObject<Rules>(jsonFileReader.ReadToEnd());
+                }
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                Console.Out.WriteLine(e.Message);
+            }
+
+            return null;
+        }
+
+        public List<Rules> getArmyRules(string name)
+        {
+            try
+            {
+                using (var jsonFileReader = File.OpenText(RulesFileName(name)))
+                {                   
+                    return JsonConvert.DeserializeObject<List<Rules>>(jsonFileReader.ReadToEnd());
                 }
             }
             catch (DirectoryNotFoundException e)

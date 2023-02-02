@@ -25,19 +25,38 @@ else
     <div class="container" style="">
 
         <div class="row" style="margin-bottom:20px">
+            <div class="col" style="text-align:left">
+                <h3>@ListName <i class="bi bi-pencil-fill" style="margin-left:5px; margin-bottom:5px" data-toggle="modal" data-target="#changeListNameModal"></i></h3>
+                <div class="modal" id="changeListNameModal" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">            
+                            <div class="modal-body">
+                                <p>Edit Army List name:</p>
+                                <input type="text" id="armyListNameTextInput" class="form-control" value=@ListName/>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="changeListNameModalClose" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" @onclick='(e=>changeListName())'>Submit</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="text-align:right">
+                <h4>@(Points + "pts.")</h4>
+            </div>
             <div class="col" style="text-align:right">
                 
                 <div class="dropdown">
-                    <button class="btn btn-secondary" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-expanded="false">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
-                            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                        </svg>
+                    <button class="btn btn-secondary" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-expanded="false">                     
+                        <i class="bi bi-three-dots-vertical"></i>
                     </button>
                     <InputFile id="loadArmyListInput" style="display: none;" accept=".oprrost" OnChange="loadArmy" />
                     <ul class="dropdown-menu">
                         <li class="dropdown-item" @onclick='(e => downloadArmyListContent(ListName + ".oprrost"))'>Save roster file</li>
                         <li class="dropdown-item" @onclick='(e => downloadArmyListContent(ListName + ".txt"))'>Save as text</li>
-                        <li class="dropdown-item" @onclick='(e => openFileBrowser())'>Open Army List</li>
+                        <li class="dropdown-item" @onclick='(e => clickElement("loadArmyListInput"))'>Open Army List</li>
                     </ul>
                 </div>
             </div>
@@ -62,8 +81,16 @@ else
             <div class="col" id="armyRoster" style="overflow-y:auto; height:90vh">
                 @foreach (Unit unit in this.ArmyRoster)
                 {
-                    <div class="card">
+                    <div class="card">                        
                         <div class="card-body" @onclick="(e => selectModifiers(unit))">
+                            <div class="row">
+                                <div class="dropdown" style="margin-left:94%; margin-bottom:-6%">
+                                    <i class="bi bi-three-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false"></i>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-item" @onclick='(e => removeUnit(unit))'>Remove</li>                                       
+                                    </ul>
+                                </div>
+                            </div>
                             <h5 class="card-title">@(unit.UnitName + " - " + unit.Points + "pts.")  &plus;</h5>
                             @foreach (var item in unit.CurrentGear)
                             {
@@ -81,7 +108,7 @@ else
                 {
                     @if (mod.ModType == ModTypes.Replace)
                     {
-                        <div>
+                        <div>         
                             <h5>@("Replace one " + formattedGearList(mod.Target))</h5>
                             <ul class="list-group">
                                 @foreach (ModifierOption option in mod.Options)
@@ -405,17 +432,22 @@ else
         Units = jsonService.GetUnits(ArmyName);
         ArmyRoster = new List<Unit>();
         Mods = new List<Modifier>();
-        ListName = "armyList";
+        ListName = ArmyName + " List";
     }
 
     private void addUnit(Unit unit)
     {
-        /*Unit newUnit = JsonSerializer.Deserialize<Unit>(unit.ToString(), new JsonSerializerOptions
-        {
-            IncludeFields = true,
-        });*/
+        //Uses deserialization to make a deep copy of the unit.
         Unit newUnit = JsonConvert.DeserializeObject<Unit>(unit.ToString());
         ArmyRoster.Add(newUnit);
+        changeState();
+
+    }
+
+    private void removeUnit(Unit unit)
+    {
+        ArmyRoster.Remove(unit);
+        changeState();
 
     }
 
@@ -483,14 +515,14 @@ else
                 await JSRuntime.InvokeVoidAsync("changeCheck", Id, true);
             }
         }
-        StateHasChanged();
+        changeState();
     }
 
     private void removeOption(EventArgs e, IModifyCommand command, string Id)
     {
         if (command.undo())
         {
-            StateHasChanged();
+            changeState();
         }
 
     }
@@ -499,7 +531,7 @@ else
     {
         if (command.execute())
         {
-            StateHasChanged();
+            changeState();
         }
 
     }
@@ -521,6 +553,18 @@ else
         }
     }
 
+    private async void changeListName()
+    {
+        string textInput = await JSRuntime.InvokeAsync<string>("getElementValue", "armyListNameTextInput");
+
+        if(!textInput.Equals(""))
+        {
+            ListName = textInput;
+            clickElement("changeListNameModalClose");
+            StateHasChanged();
+        }
+    }
+
     private async void downloadArmyListContent(string fileName)
     {
 
@@ -529,10 +573,24 @@ else
 
         if (fileName.EndsWith(".oprrost"))
         {
-            
-            byte[] downloadFileContent = Encoding.UTF8.GetBytes(fileContent);
 
-            Debug.WriteLine(System.Text.Encoding.UTF8.GetString(downloadFileContent));
+            byte[] downloadFileContent = Encoding.Unicode.GetBytes(fileContent);
+
+            Debug.WriteLine(System.Text.Encoding.Unicode.GetString(downloadFileContent));
+
+            Stream fileStream = new MemoryStream(downloadFileContent);
+            using var streamRef = new DotNetStreamReference(stream: fileStream);
+
+            await JSRuntime.InvokeVoidAsync("downloadRosterFile", fileName, streamRef);
+
+
+        }else if (fileName.EndsWith(".txt"))
+        {
+
+
+            byte[] downloadFileContent = Encoding.Unicode.GetBytes(generateArmyListText());
+
+            Debug.WriteLine(System.Text.Encoding.Unicode.GetString(downloadFileContent));
 
             Stream fileStream = new MemoryStream(downloadFileContent);
             using var streamRef = new DotNetStreamReference(stream: fileStream);
@@ -540,11 +598,63 @@ else
             await JSRuntime.InvokeVoidAsync("downloadRosterFile", fileName, streamRef);
         }
 
-
     }
-    private async void openFileBrowser()
+
+    private string generateArmyListText()
     {
-        await JSRuntime.InvokeVoidAsync("openFileBrowser");
+        StringBuilder textContent = new StringBuilder(ListName + " " + Points + " pts.\n\n");
+
+        foreach (Unit unit in ArmyRoster)
+        {
+            textContent.AppendLine(unit.UnitName + "[" + unit.UnitSize + "]");
+            textContent.AppendLine(unit.Quality + "+ " + unit.Defense + "+\n");
+
+            foreach (string specialRule in unit.SpecialRules)
+            {
+                textContent.Append(specialRule + " ");
+            }
+            textContent.AppendLine("\n");
+            foreach (var item in unit.CurrentGear)
+            {
+                textContent.AppendLine(item.Value.Item2 + "x " + item.Key + " " + item.Value.Item1);
+            }
+
+            textContent.AppendLine("\n\n");
+        }
+
+        if(ArmyRoster.Count > 0)
+        {
+            List<Rules> armyRules = jsonService.getArmyRules(ArmyName);
+            Rules coreRules = jsonService.getArmyRules();
+
+            textContent.AppendLine(coreRules.RulesName + ":\n");
+
+            foreach (Rule rule in coreRules.RulesList)
+            {
+                textContent.AppendLine(rule.Name + ": " + rule.text + "\n");
+            }
+
+            textContent.AppendLine("\n");
+
+            foreach(Rules rulesSection in armyRules)
+            {
+                textContent.AppendLine(rulesSection.RulesName + ":\n");
+
+                foreach(Rule rule in rulesSection.RulesList)
+                {
+                    textContent.AppendLine(rule.Name + ": " + rule.text + "\n");                   
+                }
+
+                textContent.AppendLine("\n");
+            }
+        }
+
+        return textContent.ToString();
+    }
+
+    private async void clickElement(string elementId)
+    {
+        await JSRuntime.InvokeVoidAsync("clickElement", elementId);
     }
 
     private async void loadArmy(InputFileChangeEventArgs e)
@@ -561,7 +671,7 @@ else
             //armyListStream.Read(fileBytes, 0, armyListStream.Length);
         }
         byte[] fileBytes = memStream.ToArray();
-        string fileContent = System.Text.Encoding.UTF8.GetString(fileBytes);
+        string fileContent = System.Text.Encoding.ASCII.GetString(fileBytes);
 
         ArmyList loadedArmy = JsonConvert.DeserializeObject<ArmyList>(fileContent);
 
@@ -573,6 +683,18 @@ else
         Units = jsonService.GetUnits(ArmyName);
         ArmyRoster = loadedArmy.Units;
 
+        StateHasChanged();
+    }
+
+    //Called when the html is to be reloaded and the points be updated at the same time.
+    private void changeState()
+    {
+        int pointTotal = 0;
+        foreach(Unit unit in ArmyRoster)
+        {
+            pointTotal += unit.Points;
+        }
+        Points = pointTotal;
         StateHasChanged();
     }
 }

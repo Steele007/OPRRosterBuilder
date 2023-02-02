@@ -14,7 +14,6 @@ namespace OPRRosterBuilder.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         public JsonFileReaderService jsonService;  
-        public IEnumerable<Unit> Units { get; private set; }
 
         public IndexModel(ILogger<IndexModel> logger, JsonFileReaderService jsonService)
         {
@@ -25,7 +24,7 @@ namespace OPRRosterBuilder.Pages
 
         public void OnGet()
         {
-            Units = jsonService.GetUnits();
+           
         }
 
         public IEnumerable<Unit> getArmyList(string listName)

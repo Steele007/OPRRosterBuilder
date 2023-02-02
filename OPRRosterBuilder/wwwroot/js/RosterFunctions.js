@@ -22,6 +22,10 @@ async function downloadRosterFile(fileName, contentStreamReference) {
     URL.revokeObjectURL(url);
 }
 
-function openFileBrowser() {
-    document.getElementById("loadArmyListInput").click();
+function clickElement(elementId) {
+    document.getElementById(elementId).click();
+}
+
+function getElementValue(elementId) {
+    return document.getElementById(elementId).value;
 }
