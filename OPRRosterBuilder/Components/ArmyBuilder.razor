@@ -103,321 +103,313 @@ else
                     </div>
                 }
             </div>
-            <div class="col" id="options" style="overflow-y:auto; height:90vh">
-                @if(Mods.Count<Modifier>() == 0)
-                {
-                    <p></p>
-                }
-                else
-                {
-                   
+            <div class="col" id="options" style="overflow-y:auto; height:90vh">                
+                @{
                     int i = 0;
-                
-                    @foreach (Modifier mod in Mods)
-                    {
-                        @if (mod.ModType == ModTypes.Replace)
-                        {
-                            <div>         
-                                <h5>@("Replace one " + formattedGearList(mod.Target))</h5>
-                                <ul class="list-group">
-                                    @foreach (ModifierOption option in mod.Options)
-                                    {
-
-                                        string idName = "Button" + i;
-
-                                        <li class="list-group-item">
-                                            @if (option.OptionPicked)
-                                            {
-                                                <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new ReplaceCommand(CurrentUnit, mod, option), idName))" checked>
-                                            }
-                                            else
-                                            {
-                                                <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new ReplaceCommand(CurrentUnit, mod, option), idName))">
-                                            }
-
-                                            <label class="form-check-label" for=@idName>
-                                                @( option.OptionPoints + " pts. ")
-                                                @foreach ((string, string, int, int) gearItem in option.OptionGear)
-                                                {
-                                                    @(gearItem.Item1 + " " + gearItem.Item2 + " ")
-                                                }
-                                            </label>
-                                        </li>
-                                        i++;
-                                    }
-
-                                </ul>
-                            </div>
-                        }
-                        else if (mod.ModType == ModTypes.Replace_All)
-                        {
-                            <div>
-                                <h5>@("Replace every " + formattedGearList(mod.Target))</h5>
-                                <ul class="list-group">
-                                    @foreach (ModifierOption option in mod.Options)
-                                    {
-
-                                        string idName = "Button" + i;
-
-                                        <li class="list-group-item">
-                                            @if (option.OptionPicked)
-                                            {
-                                                <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new ReplaceAllCommand(CurrentUnit, mod, option), idName))" checked>
-                                            }
-                                            else
-                                            {
-                                                <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new ReplaceAllCommand(CurrentUnit, mod, option), idName))">
-                                            }
-
-                                            <label class="form-check-label" for=@idName>
-                                                @( option.OptionPoints + " pts. ")
-                                                @foreach ((string, string, int, int) gearItem in option.OptionGear)
-                                                {
-                                                    @(gearItem.Item1 + " " + gearItem.Item2 + " ")
-                                                }
-                                            </label>
-                                        </li>
-                                        i++;
-                                    }
-
-                                </ul>
-                            </div>
-                        }
-                        else if (mod.ModType == ModTypes.Replace_Any)
-                        {
-                            <div>
-                                <h5>@("Replace any " + formattedGearList(mod.Target))</h5>
-                                <ul class="list-group">
-                                    @foreach (ModifierOption option in mod.Options)
-                                    {
-
-                                        string idName = "Button" + i;
-
-                                        <li class="list-group-item">
-                                            @( option.OptionPoints + " pts. ")
-                                            @foreach ((string, string, int, int) gearItem in option.OptionGear)
-                                            {
-                                                <i id=@("Subtract" + i) @onclick="(e => removeOption(e, new ReplaceCommand(CurrentUnit, mod, option),idName))">- </i> @getGearNum(gearItem.Item1) <i id=@("Add" + i) @onclick="(e => addOption(e, new ReplaceCommand(CurrentUnit, mod, option),idName))">+ </i>
-                                                @(gearItem.Item1 + " " + gearItem.Item2 + " ")
-                                            }
-                                        </li>
-                                        i++;
-                                    }
-
-                                </ul>
-                            </div>
-                        }
-                        else if (mod.ModType == ModTypes.Replace_Up_To)
-                        {
-                            <div>
-                                <h5>@("Replace up to " + mod.TargetNum + " " + formattedGearList(mod.Target))</h5>
-                                <ul class="list-group">
-                                    @foreach (ModifierOption option in mod.Options)
-                                    {
-
-                                        string idName = "Button" + i;
-
-                                        <li class="list-group-item">
-                                            @( option.OptionPoints + " pts. ")
-                                            @foreach ((string, string, int, int) gearItem in option.OptionGear)
-                                            {
-                                                <i id=@("Subtract" + i) @onclick="(e => removeOption(e, new ReplaceCommand(CurrentUnit, mod, option),idName))">- </i> @getGearNum(gearItem.Item1) <i id=@("Add" + i) @onclick="(e => addOption(e, new ReplaceCommand(CurrentUnit, mod, option),idName))">+ </i>
-                                                @(gearItem.Item1 + " " + gearItem.Item2 + " ")
-                                            }
-                                        </li>
-                                        i++;
-                                    }
-
-                                </ul>
-                            </div>
-                        }
-                        else if (mod.ModType == ModTypes.Upgrade)
-                        {
-                            <div>
-                                <h5>@("Take one " + formattedGearList(mod.Target) + " upgrade")</h5>
-                                <ul class="list-group">
-                                    @foreach (ModifierOption option in mod.Options)
-                                    {
-                                        string idName = "Button" + i;
-                                        <li class="list-group-item">
-                                            @if (option.OptionPicked)
-                                            {
-                                                <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))" checked>
-                                            }
-                                            else
-                                            {
-                                                <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))">
-                                            }
-
-                                            <label class="form-check-label" for=@idName>
-                                                @( option.OptionPoints + " pts. ")
-                                                @foreach ((string, string, int, int) gearItem in option.OptionGear)
-                                                {
-                                                    @(gearItem.Item1 + " " + gearItem.Item2 + " ")
-                                                }
-                                            </label>
-                                        </li>
-                                        i++;
-                                    }
-
-                                </ul>
-                            </div>
-                        }
-                        else if (mod.ModType == ModTypes.Upgrade_All)
-                        {
-                            <div>
-                                <h5>@("Upgrade all models with")</h5>
-                                <ul class="list-group">
-                                    @foreach (ModifierOption option in mod.Options)
-                                    {
-                                        string idName = "Button" + i;
-                                        <li class="list-group-item">
-                                            @if (option.OptionPicked)
-                                            {
-                                                <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))" checked>
-                                            }
-                                            else
-                                            {
-                                                <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))">
-                                            }
-
-                                            <label class="form-check-label" for=@idName>
-                                                @( option.OptionPoints + " pts. ")
-                                                @foreach ((string, string, int, int) gearItem in option.OptionGear)
-                                                {
-                                                    @(gearItem.Item1 + " " + gearItem.Item2 + " ")
-                                                }
-                                            </label>
-                                        </li>
-                                        i++;
-                                    }
-
-                                </ul>
-                            </div>
-                        }
-                        else if (mod.ModType == ModTypes.Upgrade_All_Any)
-                        {
-                            <div>
-                                <h5>@("Upgrade all models with any")</h5>
-                                <ul class="list-group">
-                                    @foreach (ModifierOption option in mod.Options)
-                                    {
-                                        string idName = "Button" + i;
-                                        <li class="list-group-item">
-                                            @if (option.OptionPicked)
-                                            {
-                                                <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))" checked>
-                                            }
-                                            else
-                                            {
-                                                <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))">
-                                            }
-
-                                            <label class="form-check-label" for=@idName>
-                                                @( option.OptionPoints + " pts. ")
-                                                @foreach ((string, string, int, int) gearItem in option.OptionGear)
-                                                {
-                                                    @(gearItem.Item1 + " " + gearItem.Item2 + " ")
-                                                }
-                                            </label>
-                                        </li>
-                                        i++;
-                                    }
-
-                                </ul>
-                            </div>
-                        }
-                        else if (mod.ModType == ModTypes.Upgrade_Any)
-                        {
-                            <div>
-                                <h5>@("Upgrade " + formattedGearList(mod.Target) + " with any")</h5>
-                                <ul class="list-group">
-                                    @foreach (ModifierOption option in mod.Options)
-                                    {
-                                        string idName = "Button" + i;
-                                        <li class="list-group-item">
-                                            @if (option.OptionPicked)
-                                            {
-                                                <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))" checked>
-                                            }
-                                            else
-                                            {
-                                                <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))">
-                                            }
-
-                                            <label class="form-check-label" for=@idName>
-                                                @( option.OptionPoints + " pts. ")
-                                                @foreach ((string, string, int, int) gearItem in option.OptionGear)
-                                                {
-                                                    @(gearItem.Item1 + " " + gearItem.Item2 + " ")
-                                                }
-                                            </label>
-                                        </li>
-                                        i++;
-                                    }
-
-                                </ul>
-                            </div>
-                        }
-                        else if (mod.ModType == ModTypes.Upgrade_One_With)
-                        {
-                            <div>
-                                <h5>@("Upgrade one model with " + (mod.TargetNum == 1 ? "one":"any"))</h5>
-                                <ul class="list-group">
-                                    @foreach (ModifierOption option in mod.Options)
-                                    {
-                                        string idName = "Button" + i;
-                                        <li class="list-group-item">
-                                            @if (option.OptionPicked)
-                                            {
-                                                <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))" checked>
-                                            }
-                                            else
-                                            {
-                                                <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))">
-                                            }
-
-                                            <label class="form-check-label" for=@idName>
-                                                @( option.OptionPoints + " pts. ")
-                                                @foreach ((string, string, int, int) gearItem in option.OptionGear)
-                                                {
-                                                    @(gearItem.Item1 + " " + gearItem.Item2 + " ")
-                                                }
-                                            </label>
-                                        </li>
-                                        i++;
-                                    }
-
-                                </ul>
-                            </div>
-                        }
-                        else if (mod.ModType == ModTypes.Upgrade_Any_With)
-                        {
-                            <div>
-                                <h5>@("Upgrade any " + formattedGearList(mod.Target) + " with")</h5>
-                                <ul class="list-group">
-                                    @foreach (ModifierOption option in mod.Options)
-                                    {
-
-                                        string idName = "Button" + i;
-
-                                        <li class="list-group-item">
-                                            @( option.OptionPoints + " pts. ")
-                                            @foreach ((string, string, int, int) gearItem in option.OptionGear)
-                                            {
-                                                <i id=@("Subtract" + i) @onclick="(e => removeOption(e, new UpgradeAnyWithCommand(CurrentUnit, mod, option),idName))">- </i> @getGearNum(gearItem.Item1) <i id=@("Add" + i) @onclick="(e => addOption(e, new UpgradeAnyWithCommand(CurrentUnit, mod, option),idName))">+ </i>
-                                                @(gearItem.Item1 + " " + gearItem.Item2 + " ")
-                                            }
-                                        </li>
-                                        i++;
-                                    }
-
-                                </ul>
-                            </div>
-                        }
-                    } 
                 }
-                
+                @foreach (Modifier mod in Mods)
+                {
+                    @if (mod.ModType == ModTypes.Replace)
+                    {
+                        <div>         
+                            <h5>@("Replace one " + formattedGearList(mod.Target))</h5>
+                            <ul class="list-group">
+                                @foreach (ModifierOption option in mod.Options)
+                                {
+
+                                    string idName = "Button" + i;
+
+                                    <li class="list-group-item">
+                                        @if (option.OptionPicked)
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new ReplaceCommand(CurrentUnit, mod, option), idName))" checked>
+                                        }
+                                        else
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new ReplaceCommand(CurrentUnit, mod, option), idName))">
+                                        }
+
+                                        <label class="form-check-label" for=@idName>
+                                            @( option.OptionPoints + " pts. ")
+                                            @foreach ((string, string, int, int) gearItem in option.OptionGear)
+                                            {
+                                                @(gearItem.Item1 + " " + gearItem.Item2 + " ")
+                                            }
+                                        </label>
+                                    </li>
+                                    i++;
+                                }
+
+                            </ul>
+                        </div>
+                    }
+                    else if (mod.ModType == ModTypes.Replace_All)
+                    {
+                        <div>
+                            <h5>@("Replace every " + formattedGearList(mod.Target))</h5>
+                            <ul class="list-group">
+                                @foreach (ModifierOption option in mod.Options)
+                                {
+
+                                    string idName = "Button" + i;
+
+                                    <li class="list-group-item">
+                                        @if (option.OptionPicked)
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new ReplaceAllCommand(CurrentUnit, mod, option), idName))" checked>
+                                        }
+                                        else
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new ReplaceAllCommand(CurrentUnit, mod, option), idName))">
+                                        }
+
+                                        <label class="form-check-label" for=@idName>
+                                            @( option.OptionPoints + " pts. ")
+                                            @foreach ((string, string, int, int) gearItem in option.OptionGear)
+                                            {
+                                                @(gearItem.Item1 + " " + gearItem.Item2 + " ")
+                                            }
+                                        </label>
+                                    </li>
+                                    i++;
+                                }
+
+                            </ul>
+                        </div>
+                    }
+                    else if (mod.ModType == ModTypes.Replace_Any)
+                    {
+                        <div>
+                            <h5>@("Replace any " + formattedGearList(mod.Target))</h5>
+                            <ul class="list-group">
+                                @foreach (ModifierOption option in mod.Options)
+                                {
+
+                                    string idName = "Button" + i;
+
+                                    <li class="list-group-item">
+                                        @( option.OptionPoints + " pts. ")
+                                        @foreach ((string, string, int, int) gearItem in option.OptionGear)
+                                        {
+                                            <i id=@("Subtract" + i) @onclick="(e => removeOption(e, new ReplaceCommand(CurrentUnit, mod, option),idName))">- </i> @getGearNum(gearItem.Item1) <i id=@("Add" + i) @onclick="(e => addOption(e, new ReplaceCommand(CurrentUnit, mod, option),idName))">+ </i>
+                                            @(gearItem.Item1 + " " + gearItem.Item2 + " ")
+                                        }
+                                    </li>
+                                    i++;
+                                }
+
+                            </ul>
+                        </div>
+                    }
+                    else if (mod.ModType == ModTypes.Replace_Up_To)
+                    {
+                        <div>
+                            <h5>@("Replace up to " + mod.TargetNum + " " + formattedGearList(mod.Target))</h5>
+                            <ul class="list-group">
+                                @foreach (ModifierOption option in mod.Options)
+                                {
+
+                                    string idName = "Button" + i;
+
+                                    <li class="list-group-item">
+                                        @( option.OptionPoints + " pts. ")
+                                        @foreach ((string, string, int, int) gearItem in option.OptionGear)
+                                        {
+                                            <i id=@("Subtract" + i) @onclick="(e => removeOption(e, new ReplaceCommand(CurrentUnit, mod, option),idName))">- </i> @getGearNum(gearItem.Item1) <i id=@("Add" + i) @onclick="(e => addOption(e, new ReplaceCommand(CurrentUnit, mod, option),idName))">+ </i>
+                                            @(gearItem.Item1 + " " + gearItem.Item2 + " ")
+                                        }
+                                    </li>
+                                    i++;
+                                }
+
+                            </ul>
+                        </div>
+                    }
+                    else if (mod.ModType == ModTypes.Upgrade)
+                    {
+                        <div>
+                            <h5>@("Take one " + formattedGearList(mod.Target) + " upgrade")</h5>
+                            <ul class="list-group">
+                                @foreach (ModifierOption option in mod.Options)
+                                {
+                                    string idName = "Button" + i;
+                                    <li class="list-group-item">
+                                        @if (option.OptionPicked)
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))" checked>
+                                        }
+                                        else
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))">
+                                        }
+
+                                        <label class="form-check-label" for=@idName>
+                                            @( option.OptionPoints + " pts. ")
+                                            @foreach ((string, string, int, int) gearItem in option.OptionGear)
+                                            {
+                                                @(gearItem.Item1 + " " + gearItem.Item2 + " ")
+                                            }
+                                        </label>
+                                    </li>
+                                    i++;
+                                }
+
+                            </ul>
+                        </div>
+                    }
+                    else if (mod.ModType == ModTypes.Upgrade_All)
+                    {
+                        <div>
+                            <h5>@("Upgrade all models with")</h5>
+                            <ul class="list-group">
+                                @foreach (ModifierOption option in mod.Options)
+                                {
+                                    string idName = "Button" + i;
+                                    <li class="list-group-item">
+                                        @if (option.OptionPicked)
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))" checked>
+                                        }
+                                        else
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))">
+                                        }
+
+                                        <label class="form-check-label" for=@idName>
+                                            @( option.OptionPoints + " pts. ")
+                                            @foreach ((string, string, int, int) gearItem in option.OptionGear)
+                                            {
+                                                @(gearItem.Item1 + " " + gearItem.Item2 + " ")
+                                            }
+                                        </label>
+                                    </li>
+                                    i++;
+                                }
+
+                            </ul>
+                        </div>
+                    }
+                    else if (mod.ModType == ModTypes.Upgrade_All_Any)
+                    {
+                        <div>
+                            <h5>@("Upgrade all models with any")</h5>
+                            <ul class="list-group">
+                                @foreach (ModifierOption option in mod.Options)
+                                {
+                                    string idName = "Button" + i;
+                                    <li class="list-group-item">
+                                        @if (option.OptionPicked)
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))" checked>
+                                        }
+                                        else
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))">
+                                        }
+
+                                        <label class="form-check-label" for=@idName>
+                                            @( option.OptionPoints + " pts. ")
+                                            @foreach ((string, string, int, int) gearItem in option.OptionGear)
+                                            {
+                                                @(gearItem.Item1 + " " + gearItem.Item2 + " ")
+                                            }
+                                        </label>
+                                    </li>
+                                    i++;
+                                }
+
+                            </ul>
+                        </div>
+                    }
+                    else if (mod.ModType == ModTypes.Upgrade_Any)
+                    {
+                        <div>
+                            <h5>@("Upgrade " + formattedGearList(mod.Target) + " with any")</h5>
+                            <ul class="list-group">
+                                @foreach (ModifierOption option in mod.Options)
+                                {
+                                    string idName = "Button" + i;
+                                    <li class="list-group-item">
+                                        @if (option.OptionPicked)
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))" checked>
+                                        }
+                                        else
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))">
+                                        }
+
+                                        <label class="form-check-label" for=@idName>
+                                            @( option.OptionPoints + " pts. ")
+                                            @foreach ((string, string, int, int) gearItem in option.OptionGear)
+                                            {
+                                                @(gearItem.Item1 + " " + gearItem.Item2 + " ")
+                                            }
+                                        </label>
+                                    </li>
+                                    i++;
+                                }
+
+                            </ul>
+                        </div>
+                    }
+                    else if (mod.ModType == ModTypes.Upgrade_One_With)
+                    {
+                        <div>
+                            <h5>@("Upgrade one model with " + (mod.TargetNum == 1 ? "one":"any"))</h5>
+                            <ul class="list-group">
+                                @foreach (ModifierOption option in mod.Options)
+                                {
+                                    string idName = "Button" + i;
+                                    <li class="list-group-item">
+                                        @if (option.OptionPicked)
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))" checked>
+                                        }
+                                        else
+                                        {
+                                            <input class="form-check-input me-1" type="checkbox" name="listGroupRadio" value="" id=@idName @onclick="(e => optionChecked(e, new UpgradeCommand(CurrentUnit, mod, option), idName))">
+                                        }
+
+                                        <label class="form-check-label" for=@idName>
+                                            @( option.OptionPoints + " pts. ")
+                                            @foreach ((string, string, int, int) gearItem in option.OptionGear)
+                                            {
+                                                @(gearItem.Item1 + " " + gearItem.Item2 + " ")
+                                            }
+                                        </label>
+                                    </li>
+                                    i++;
+                                }
+
+                            </ul>
+                        </div>
+                    }
+                    else if (mod.ModType == ModTypes.Upgrade_Any_With)
+                    {
+                        <div>
+                            <h5>@("Upgrade any " + formattedGearList(mod.Target) + " with")</h5>
+                            <ul class="list-group">
+                                @foreach (ModifierOption option in mod.Options)
+                                {
+
+                                    string idName = "Button" + i;
+
+                                    <li class="list-group-item">
+                                        @( option.OptionPoints + " pts. ")
+                                        @foreach ((string, string, int, int) gearItem in option.OptionGear)
+                                        {
+                                            <i id=@("Subtract" + i) @onclick="(e => removeOption(e, new UpgradeAnyWithCommand(CurrentUnit, mod, option),idName))">- </i> @getGearNum(gearItem.Item1) <i id=@("Add" + i) @onclick="(e => addOption(e, new UpgradeAnyWithCommand(CurrentUnit, mod, option),idName))">+ </i>
+                                            @(gearItem.Item1 + " " + gearItem.Item2 + " ")
+                                        }
+                                    </li>
+                                    i++;
+                                }
+
+                            </ul>
+                        </div>
+                    }
+                }
             </div>
         </div>
 
