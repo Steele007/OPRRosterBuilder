@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace OPRRosterBuilder.Models
 {
     public class ModifierOption
-    {   //List of gear added (name, rules text, number, upgrade status)
+    {   //List of gear added (name, rules text, number, upgrade status i.e. how many upgrades does this piece of gear have).
         public List<(string, string, int, int)> OptionGear { get; set; }
         public int OptionPoints { get; set; }
 

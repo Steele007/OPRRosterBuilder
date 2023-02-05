@@ -22,6 +22,8 @@ namespace OPRRosterBuilder.Commands
         public bool execute()
         {
             //Checks if the gear the option is replacing is either not present or has an upgrade attached.
+            //Also checks how much of the gear can be replaced (if a unit has 5x pistols and 3x ccws and we're replacing pistols and ccws, 
+            //it will only replace 3 pairs.)
             (string, int, int) targetValue;
             int NumberOfReplacedGear = -1;
             foreach ((string, string, int) target in AssignedModifier.Target)
@@ -51,7 +53,7 @@ namespace OPRRosterBuilder.Commands
             foreach ((string, string, int) target in AssignedModifier.Target)
             {
 
-                //Decrements the target gear by 1 if it's being replaced
+                //Decrements the target gear by 1 if it's being replaced.
                 (string, int, int) dictValue;
                 AssignedUnit.CurrentGear.TryGetValue(target.Item1, out dictValue);
                 dictValue.Item2 -= NumberOfReplacedGear;

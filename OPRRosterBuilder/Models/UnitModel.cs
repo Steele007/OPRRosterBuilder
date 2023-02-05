@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace OPRRosterBuilder.Models
 {
+    //Currently unused.
     public class UnitModel
     {
         public Dictionary<string, (string, int)> Gear { get; set; }

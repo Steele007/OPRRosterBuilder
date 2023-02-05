@@ -603,7 +603,7 @@ else
         }
 
     }
-
+    //Generates file content for the text version of the army list
     private string generateArmyListText()
     {
         StringBuilder textContent = new StringBuilder(ListName + " " + Points + " pts.\n\n");
@@ -656,11 +656,7 @@ else
         return textContent.ToString();
     }
 
-    private async void clickElement(string elementId)
-    {
-        await JSRuntime.InvokeVoidAsync("clickElement", elementId);
-    }
-
+    
     private async void loadArmy(InputFileChangeEventArgs e)
     {
 
@@ -675,13 +671,13 @@ else
             //armyListStream.Read(fileBytes, 0, armyListStream.Length);
         }
         byte[] fileBytes = memStream.ToArray();
-        string fileContent = System.Text.Encoding.ASCII.GetString(fileBytes);
+        string fileContent = System.Text.Encoding.Unicode.GetString(fileBytes);
 
         ArmyList loadedArmy = JsonConvert.DeserializeObject<ArmyList>(fileContent);
 
         //Essentially reconstruct the entire page.
         Points = loadedArmy.Points;
-        ListName = armyListFile.Name;
+        ListName = armyListFile.Name.Substring(0, armyListFile.Name.Length - 8);
         Debug.WriteLine(ListName);
         ArmyName = loadedArmy.ArmyName;
         Units = jsonService.GetUnits(ArmyName);
@@ -700,5 +696,10 @@ else
         }
         Points = pointTotal;
         StateHasChanged();
+    }
+    
+    private async void clickElement(string elementId)
+    {
+        await JSRuntime.InvokeVoidAsync("clickElement", elementId);
     }
 }

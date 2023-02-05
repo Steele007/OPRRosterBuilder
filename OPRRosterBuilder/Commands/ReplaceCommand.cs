@@ -31,6 +31,7 @@ namespace OPRRosterBuilder.Commands
                 }
             }
 
+            //Checks if the maximum number of choices for the modifier has already been made.
             if(AssignedModifier.CurrentNum >= AssignedModifier.TargetNum)
             {
                 return false;
@@ -40,7 +41,7 @@ namespace OPRRosterBuilder.Commands
             foreach ((string, string, int) target in AssignedModifier.Target)
             {
 
-                //Decrements the target gear by 1 if it's being replaced
+                //Decrements the target gear by 1 if it's being replaced.
                 (string, int, int) dictValue;
                 AssignedUnit.CurrentGear.TryGetValue(target.Item1, out dictValue);
                 dictValue.Item2--;
@@ -69,7 +70,7 @@ namespace OPRRosterBuilder.Commands
                 }
             }
 
-                //For some reason AssignedOption.Item3 = true throws an error.
+             //For some reason AssignedOption.Item3 = true throws an error.
              ModifierOption temp = AssignedOption;
              temp.OptionPicked = true;
              AssignedOption = temp;
@@ -97,7 +98,7 @@ namespace OPRRosterBuilder.Commands
             foreach ((string, string, int, int) target in AssignedOption.OptionGear)
             {
 
-                //Decrements the target gear by 1 if it's being replaced
+                //Decrements the target gear by 1 if it's being replaced.
                 (string, int, int) dictValue;
                 AssignedUnit.CurrentGear.TryGetValue(target.Item1, out dictValue);
                 dictValue.Item2--;

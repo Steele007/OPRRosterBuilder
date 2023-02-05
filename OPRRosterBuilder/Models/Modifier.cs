@@ -10,7 +10,9 @@ namespace OPRRosterBuilder.Models
     public class Modifier
     {     
         public ModTypes ModType { get; set; }
+        //The gear being modified or replaced. Also used when undoing a modification.
         public List<(string, string, int)> Target { get; set; }
+        //List of individual options for each modifier.
         public List<ModifierOption> Options { get; set; }
         public int TargetNum { get; set; }
         public int CurrentNum { get; set; }

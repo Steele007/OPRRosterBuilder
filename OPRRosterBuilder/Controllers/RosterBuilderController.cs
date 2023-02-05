@@ -13,7 +13,7 @@ namespace OPRRosterBuilder.Controllers
     {
         public FileResult DownloadJson(string content, string name)
         {
-            byte[] downloadFileContent = Encoding.ASCII.GetBytes(content);
+            byte[] downloadFileContent = Encoding.Unicode.GetBytes(content);
             return File(downloadFileContent, System.Net.Mime.MediaTypeNames.Application.Json, name);
         }
     }

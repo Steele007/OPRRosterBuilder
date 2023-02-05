@@ -21,7 +21,7 @@ namespace OPRRosterBuilder.Commands
 
         public bool execute()
         {
-            //Checks if the gear the option is ugrading is either present or not.          
+            //Checks if the gear the option is upgrading is either present or not.          
             foreach ((string, string, int) target in AssignedModifier.Target)
             {
                 (string, int, int) targetValue;
@@ -31,6 +31,7 @@ namespace OPRRosterBuilder.Commands
                 }
             }
 
+            //Checks if the maximum number of choices for the modifier has already been made.
             if (AssignedModifier.CurrentNum >= AssignedModifier.TargetNum)
             {
                return false; 
@@ -82,7 +83,7 @@ namespace OPRRosterBuilder.Commands
 
         public bool undo()
         {
-            //Checks if the gear the option is ugrading is either present or not.
+            //Checks if the gear the option is upgrading is either present or not.
             (string, int, int) targetValue;
             foreach ((string, string, int, int) target in AssignedOption.OptionGear)
             {

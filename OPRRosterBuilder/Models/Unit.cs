@@ -15,12 +15,12 @@ namespace OPRRosterBuilder.Models
         public int Points { get; set; }
         public int Quality { get; set; }
         public int Defense { get; set; }
-        //Key is the item name, the value is (rules text, point cost and whether or the item has been upgraded)
+        //Gear is as follows: <name, (rules text, number, upgrade status i.e. how many upgrades does this piece of gear have)>
         public Dictionary<string, (string, int, int)> StartingGear { get; set; }
         public Dictionary<string, (string, int, int)> CurrentGear { get; set; }
-        public Modifier[] Modifiers { get; set; }
-        public List<string> SpecialRules { get; set; }
-        //Add an array of Models?
+        //List of modification options for each unit.
+        public List<Modifier> Modifiers { get; set; }
+        public List<string> SpecialRules { get; set; }       
         public override string ToString() => JsonConvert.SerializeObject(this);
         
     }
